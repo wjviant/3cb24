@@ -28,5 +28,15 @@
 
 	<?php wp_footer(); ?>
 	
+	<script type="module">
+		import PhotoSwipeLightbox from '/wp-content/themes/3cb24/js/photoswipe-lightbox.esm.min.js';
+		const lightbox = new PhotoSwipeLightbox({
+			  gallery: '.mygallery',
+			  children: 'a',
+			  pswpModule: () => import('/wp-content/themes/3cb24/js/photoswipe.esm.min.js')
+		});
+		lightbox.init();
+	</script>
+	
 </body>
 </html>
