@@ -4,7 +4,10 @@
 
 Plugin functionality developed by Lifetap with help from Badger on the mission slotting tool. 
 
-Fonts are from Google fonts but served locally for speed/GDPR reasons.
+## Fonts
+Bebas Neue from Google fonts but served locally for speed/GDPR reasons'
 https://fonts.google.com/specimen/Bebas+Neue
-https://fonts.google.com/specimen/Oswald
 
+D-Din is based on a Monotype-font that Datto acquired to be open
+sourced. Design: Charles Nix (Monotype).
+https://fontlibrary.org/en/font/d-din

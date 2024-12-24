@@ -58,8 +58,11 @@ show_admin_bar(false);
 
 // Remove CSS files - find the handle in the plugin file and add here
 function remove_unwanted_css(){
-	wp_dequeue_style('page-list-style');
-	wp_dequeue_style('bfa-font-awesome');
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wc-blocks-style' );
+	wp_dequeue_style( 'global-styles' );
+	wp_deregister_style( 'classic-theme-styles' );
+	wp_dequeue_style( 'classic-theme-styles' );
 }
 add_action('wp_enqueue_scripts','remove_unwanted_css', 100);
 
@@ -160,22 +163,6 @@ function sidebar_widgets_init() {
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 	));
-	register_sidebar( array(
-		'name' => 'Header cart',
-		'id' => 'header-cart',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
-	));
-	register_sidebar( array(
-		'name' => 'Shop sidebar',
-		'id' => 'shop-sidebar',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
-	));
 }
 add_action( 'widgets_init', 'sidebar_widgets_init' );
 
@@ -188,8 +175,8 @@ add_theme_support( 'post-thumbnails' );
 function my_scripts_method() {
 	
 	// Add match height script
-	wp_register_script('match-script', get_template_directory_uri() . '/js/jquery.matchHeight.min.js', array('jquery'));
-	wp_enqueue_script('match-script');
+	//wp_register_script('match-script', get_template_directory_uri() . '/js/jquery.matchHeight.min.js', array('jquery'));
+	//wp_enqueue_script('match-script');
 	
 	// Add toast
 	wp_register_script('toast-script', get_template_directory_uri() . '/js/toaster.js', array('jquery'));
@@ -207,11 +194,6 @@ function my_scripts_method() {
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 
-// Change admin footer text
-add_filter('admin_footer_text', 'remove_footer_admin'); //change admin footer text
-function remove_footer_admin () {
-	echo "Need some help? Please open a ticket at the <a href=\"http://www.fcswebsites.co.uk/client/index.php\">FCS support portal</a>";
-} 
 
 
 // Callback function to insert 'styleselect' into the $buttons array

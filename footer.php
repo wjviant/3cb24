@@ -6,12 +6,12 @@
 					
 					<h3>Contact Us</h3>
 					
-					<p><a href="<?php the_field('teamspeak','options');?>">Join Teamspeak Server</a><br>
-					<a href="<?php the_field('discord','options');?>">Join Discord Server</a></p>
+					<p><a href="<?php the_field( 'teamspeak','options' ); ?>">Join Teamspeak Server</a><br>
+					<a href="<?php the_field( 'discord','options' ); ?>">Join Discord Server</a></p>
 					
-					<?php get_template_part('includes/social'); ?>
+					<?php get_template_part( 'includes/social' ); ?>
 					
-					<p>&copy; 3 Commando Brigade Gaming Community / All images belong to their respective owners</p>
+					<p>&copy; <?php the_field( 'footer_message','options' ); ?></p>
 					
 				</div>
 				<div class="btt">
@@ -28,8 +28,5 @@
 
 	<?php wp_footer(); ?>
 	
-	
-	
 </body>
-
 </html>

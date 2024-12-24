@@ -1,32 +1,28 @@
 @use "sass:color";
 
-@import url('https://fonts.cdnfonts.com/css/gidole');
-
-/* bebas-neue-regular - latin */
 @font-face {
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-	   url('../fonts/bebas-neue-v9-latin-regular.woff2') format('woff2'), 
-	   url('../fonts/bebas-neue-v9-latin-regular.woff') format('woff'); 
+	   url('fonts/bebas-neue-v9-latin-regular.woff2') format('woff2'), 
+	   url('fonts/bebas-neue-v9-latin-regular.woff') format('woff'); 
 }
 
-/* oswald-regular - latin */
 @font-face {
   font-display: swap; 
-  font-family: 'Oswald';
+  font-family: 'D-DIN';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/oswald-v53-latin-regular.woff2') format('woff2'); 
+  src: url('fonts/D-DIN.woff2') format('woff2'); 
 }
-/* oswald-700 - latin */
+
 @font-face {
   font-display: swap; 
-  font-family: 'Oswald';
+  font-family: 'D-DIN';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/oswald-v53-latin-700.woff2') format('woff2');
+  src: url('fonts/D-DIN-Bold.woff2') format('woff2');
 }
 
 // Font weights
@@ -35,7 +31,7 @@ $regular: 400;
 $bold: 700; 
 
 // Base Font
-$base-font-family: "gidole", arial, sans-serif;
+$base-font-family: "D-DIN", arial, sans-serif;
 $base-font-weight: $regular;
 $base-font-size: 18px;
 $base-line-height: 1.5;

@@ -135,26 +135,10 @@
 	}
 	
 		
-	  
-	  /*
-	  // Open off-site links in new tab
-	  $('a').each(function() {
-		  var a = new RegExp('/' + window.location.host + '/');
-		  if(!a.test(this.href)) {
-				$(this).click(function(event) {
-					event.preventDefault();
-					event.stopPropagation();
-					window.open(this.href, '_blank');
-				});
-		  }
-		});
-	  */
-	  
-	  	
-	  
-	  // Mobile nav
 
-	    $('.menu-trigger').click(function() {
+	// Mobile nav
+
+	$('.menu-trigger').click(function() {
 			//console.log('open');
 			$('#nav2').fadeToggle(300);
 			$('body').toggleClass('mobilenavopen');
@@ -225,24 +209,12 @@
 		$(".variations select").wrap("<div class=\"select-input\"></div>");
 		$(".wpcf7 select").wrap("<div class=\"select-input\"></div>");
 		$("#sidebar select").wrap("<div class=\"select-input\"></div>");
-		$(".woocommerce-ordering select").wrap("<div class=\"select-input\"></div>");
 		
 		$(".wc-pao-addon-select").wrap("<div class=\"select-input\"></div>");
 		
-		
-		$(".wpcf7 input[type='checkbox']").after("<span class=\"checkmark\"></span>");
-		
-		
-		
-		
-		
-		
-		
-	});
-	
-	
+		//$(".wpcf7 input[type='checkbox']").after("<span class=\"checkmark\"></span>");
 
-	
+	});
 	
 
 	

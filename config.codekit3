@@ -33,6 +33,14 @@
       "oAP" : "\/404.php",
       "oF" : 0
     },
+    "\/acf-json\/group_676b0ae7ed4fe.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_676b0ae7ed4fe-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/archive.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -73,28 +81,28 @@
       "oAP" : "\/fonts\/bebas-neue-v9-latin-regular.woff2",
       "oF" : 0
     },
-    "\/fonts\/oswald-v53-latin-700.woff2" : {
+    "\/fonts\/D-DIN-Bold.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/fonts\/oswald-v53-latin-700.woff2",
+      "oAP" : "\/fonts\/D-DIN-Bold.woff2",
       "oF" : 0
     },
-    "\/fonts\/oswald-v53-latin-regular.woff2" : {
+    "\/fonts\/D-DIN-Italic.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/fonts\/oswald-v53-latin-regular.woff2",
+      "oAP" : "\/fonts\/D-DIN-Italic.woff2",
       "oF" : 0
     },
-    "\/fonts\/purista_semibold-webfont.woff" : {
+    "\/fonts\/D-DIN.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/fonts\/purista_semibold-webfont.woff",
+      "oAP" : "\/fonts\/D-DIN.woff2",
       "oF" : 0
     },
     "\/footer.php" : {
@@ -171,60 +179,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/images\/default-skin.png" : {
-      "ft" : 32768,
-      "iS" : 547,
-      "oA" : 0,
-      "oAP" : "\/images\/default-skin.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
-    "\/images\/default-skin.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/default-skin.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/easywpguide-1.png" : {
-      "ft" : 32768,
-      "iS" : 12775,
-      "oA" : 0,
-      "oAP" : "\/images\/easywpguide-1.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
-    "\/images\/favicon.ico" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/images\/favicon.ico",
-      "oF" : 0
-    },
-    "\/images\/icon-cart.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-cart.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/images\/icon-chev-down-grey.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -285,31 +239,11 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/icon-facebook.svg" : {
+    "\/images\/icon-info.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/images\/icon-facebook.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/icon-instagram.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-instagram.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/icon-linkedin.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-linkedin.svg",
+      "oAP" : "\/images\/icon-info.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -385,16 +319,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/icon-pinterest.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-pinterest.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/images\/icon-pos.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -425,26 +349,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/icon-twitter.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-twitter.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/icon-youtube.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-youtube.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/images\/icon-zoom.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -455,19 +359,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/lazy.png" : {
-      "ft" : 32768,
-      "iS" : 119,
-      "oA" : 0,
-      "oAP" : "\/images\/lazy.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
     "\/images\/logo.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -477,16 +368,6 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
-    },
-    "\/images\/preloader.gif" : {
-      "ft" : 4194304,
-      "iS" : 866,
-      "oA" : 0,
-      "oAP" : "\/images\/preloader.gif",
-      "oF" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "rq" : 75
     },
     "\/images\/site_logo.png" : {
       "ft" : 32768,
@@ -499,32 +380,6 @@
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
-      "rq" : 75
-    },
-    "\/images\/wp101-1.png" : {
-      "ft" : 32768,
-      "iS" : 41159,
-      "oA" : 0,
-      "oAP" : "\/images\/wp101-1.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
-    "\/images\/wp101.jpg" : {
-      "ft" : 16384,
-      "iS" : 41207,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/images\/wp101.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
       "rq" : 75
     },
     "\/includes\/flexible-content.php" : {
@@ -591,39 +446,6 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/js\/functionality-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.lazyload.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.lazyload.min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.matchHeight.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.matchHeight.min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.responsinav.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.responsinav-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0

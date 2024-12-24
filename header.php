@@ -4,17 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ); ?>/style.css?v=<?php echo date('dmy');?>">
-	<link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/images/favicon.ico">
 	<?php wp_head(); ?> 
-	<script type="text/javascript">
-    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-        document.write('<script src="/wp-content/themes/fcs/js/picturefill.js"><\/script>');
-	</script>	
 </head>
-<body <?php body_class(); ?>> 	
+<body <?php body_class(); ?>>
 	<?php acf_form_head(); ?>
 	<div class="wrap">	
-		<header id="header" <?php if(get_field('white_header')) { echo 'class="whiteHeader"'; }?>>
+		<header id="header" <?php if(get_field('dark_header')) { echo 'class="darkHeader"'; }?>>
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span>Menu</span></button></div>
 				<div id="headerContactMobile"><a href="<?php bloginfo('url'); ?>/contact-us/" class="">Contact</a></div>
