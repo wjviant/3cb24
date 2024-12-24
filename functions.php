@@ -8,24 +8,16 @@ add_action( 'after_setup_theme', 'seopress_theme_slug_setup' );
 		
 
 
-
-
-	
-
-
-
 // Add ACF options page
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('Global Settings');
 }
 
 
-
 // Remove default widgets
 function sort_dashboard_widgets() {
     // Global the $wp_meta_boxes variable (this will allow us to alter the array)
     global $wp_meta_boxes;
-
     // Then unset everything in the array
     unset($wp_meta_boxes['dashboard']['normal']['core']);
     unset($wp_meta_boxes['dashboard']['side']['core']);

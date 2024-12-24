@@ -574,6 +574,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/sass\/_photoswipe.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_photoswipe.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/_vars.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -791,14 +806,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/template-contactpage.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-contactpage.php",
-      "oF" : 0
-    },
     "\/template-flexible.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -821,14 +828,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-homepage.php",
-      "oF" : 0
-    },
-    "\/template-order.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-order.php",
       "oF" : 0
     },
     "\/template-testpage.php" : {

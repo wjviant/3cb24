@@ -3,7 +3,7 @@
  * Template Name: Style test page
  * Shows examples of many included styles
  *
- * @package archetype
+ * @package 3cb
  */
 
 get_header(); ?>
