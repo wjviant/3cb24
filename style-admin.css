@@ -1,0 +1,28 @@
+/* Dashboard */
+
+#custom_help_widget img {
+	display:block;
+	height:auto;
+	max-width: 100%;
+	width:100%;
+}
+
+/* Remove Yoast clutter */
+
+#yoast-warnings #wpseo-upsell-notice {
+	display:none;
+}
+
+.yoast_premium_upsell_admin_block{display:none}
+
+.wpseo-metabox-buy-premium{display:none;}
+
+#sidebar-container.wpseo_content_cell{display:none!important;}
+
+#yoast-seo-dashboard-widget .wordpress-feed {
+	display:none;
+}
+
+.yoast_premium_upsell {
+	display:none;
+}
