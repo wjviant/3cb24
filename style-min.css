@@ -1,1 +1,18 @@
-@import url("css/social.css") screen,projection;@import url("css/tiny-slider.css") screen,projection;@import url("css/fontawesome.css") screen,projection;@import url("css/style.css") screen,projection;@import url("css/woocommerce.css") screen,projection;@import url("css/photoswipe.css") screen,projection
+/*
+Theme Name: 3CB 2024 
+Theme URI: https://byintention.co
+Description: Wordpress theme by Intention
+Author: Nick Hayward
+Author URI: https://byintention.co
+Version: 1.01
+Tags: 
+License:
+License URI:
+
+GitHub Theme URI: byintention/3cb24
+Primary Branch: main
+
+
+*/
+
+@import url("sass/style.css") screen, projection;
