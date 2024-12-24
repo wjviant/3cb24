@@ -710,18 +710,6 @@
       "oAP" : "\/page.php",
       "oF" : 0
     },
-    "\/print.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/print-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/README.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -740,21 +728,6 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
-    },
-    "\/sass\/_gutenberg.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/_gutenberg.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
     },
     "\/sass\/_mobileNav.scss" : {
       "aP" : 0,
@@ -793,87 +766,6 @@
       "oA" : 0,
       "oAP" : "\/sass\/error_log.log",
       "oF" : 0
-    },
-    "\/sass\/featherlight.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/featherlight-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/sass\/featherlight.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/featherlight.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/sass\/photoswipe.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/photoswipe-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/sass\/photoswipe.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/photoswipe.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/sass\/slick.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/slick-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/sass\/slick.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/slick.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
     },
     "\/sass\/social.css" : {
       "aP" : 1,
@@ -931,8 +823,8 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/sass\/style.css",
-      "oF" : 0,
+      "oAP" : "\/style.css",
+      "oF" : 2,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -1131,22 +1023,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/woocommerce\/cart\/mini-cart.php",
-      "oF" : 0
-    },
-    "\/woocommerce\/cart\/mini-cart25.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/woocommerce\/cart\/mini-cart25.php",
-      "oF" : 0
-    },
-    "\/woocommerce\/cart\/mini-cart320.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/woocommerce\/cart\/mini-cart320.php",
       "oF" : 0
     }
   },

@@ -1,7 +1,22 @@
+/*
+Theme Name: 3CB 2024 
+Theme URI: https://byintention.co
+Description: Design by Arka, Wordpress theme by Nick at Intention
+Author: Nick Hayward
+Author URI: https://byintention.co
+Version: 1.02
+Tags: 
+License: GPL3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+GitHub Theme URI: byintention/3cb24
+Primary Branch: main
+
+*/
+
 @import 'vars';
 
 @import 'mobileNav';
-
 
 * {
 		-moz-box-sizing: border-box;
@@ -202,7 +217,7 @@ dd {
 .sent .wpcf7-response-output,
 .positive, .wpcf7-mail-sent-ok {
 	background-color:#006600;
-	background-image: url(../images/icon-pos.svg);
+	background-image: url(news-textimages/icon-pos.svg);
 	background-position: 6px 8px;
 	background-repeat:no-repeat;	
 	background-size:14px 14px;
@@ -216,7 +231,7 @@ dd {
 div.wpcf7-validation-errors, 
 div span.wpcf7-not-valid-tip {
 	background-color: #c00;
-	background-image: url(../images/icon-neg.svg);
+	background-image: url(news-textimages/icon-neg.svg);
 	background-position: 6px 8px;
 	background-repeat:no-repeat;	
 	background-size:14px 14px;
@@ -282,7 +297,7 @@ span.wpcf7-not-valid-tip {
 }
 
 .wpcf7-spinner:before {
-	content: url(../images/icon-refresh2.svg);
+	content: url(news-textimages/icon-refresh2.svg);
 	transform-origin: center center;
 }
 
@@ -519,7 +534,7 @@ textarea {
 
 .select-input { 
 	background-color: #fafafa;
-	background-image:url(../images/icon-chev-down-grey.svg);
+	background-image:url(news-textimages/icon-chev-down-grey.svg);
 	background-position: right 12px top 50%;
 	background-repeat: no-repeat;
 	background-size: 14px auto;
@@ -946,7 +961,7 @@ or wrap each row of columns in a <div class="row"> */
 
 
 #headerContactMobile {
-	background-image: url(../images/icon-mobile.svg);
+	background-image: url(news-textimages/icon-mobile.svg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size:auto 100%;
@@ -1129,12 +1144,12 @@ or wrap each row of columns in a <div class="row"> */
 	}
 
 	button:first-child {
-		background-image:url(../images/icon-down-grey.svg);
+		background-image:url(news-textimages/icon-down-grey.svg);
 		transform: rotate(90deg);
 	}	
 	
 	button:nth-child(2) {
-		background-image:url(../images/icon-down-grey.svg);
+		background-image:url(news-textimages/icon-down-grey.svg);
 		transform: rotate(-90deg);
 	}
 	
@@ -1410,7 +1425,7 @@ html .gallery .expand {
 }
 
 .faq-question:before {
-	background-image: url(../images/icon-chev-down-grey.svg);
+	background-image: url(news-textimages/icon-chev-down-grey.svg);
 	background-size:100% auto;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -1730,7 +1745,7 @@ html .gallery .expand {
 		}
 		
 		#nav2 .menu-parent-item > a:after {
-			background-image: url(../images/icon-chev-down-white.svg);
+			background-image: url(news-textimages/icon-chev-down-white.svg);
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size:auto 8px;

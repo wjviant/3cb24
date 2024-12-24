@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @import url('https://fonts.cdnfonts.com/css/gidole');
 
 /* bebas-neue-regular - latin */
@@ -45,7 +47,8 @@ $header-font-family: 'Bebas Neue', arial, sans-serif;
 $colour-text: #222;
 
 $colour-link: #5c9bbf;
-$colour-link-hover: lighten($colour-link, 10%);
+$colour-link-hover: color.adjust($colour-link, $lightness: 10%);
+
 
 $colour-button: #5c9bbf;
-$colour-button-hover: lighten($colour-button, 10%);
+$colour-button-hover: color.adjust($colour-button, $lightness: 10%);
