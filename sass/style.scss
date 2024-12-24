@@ -1198,22 +1198,31 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 .gallery {
-	background:#f6f6f6;
+	background:transparent;
 	clear:both;
 	padding: 0;
 	text-align: center;
-	
-	.one-quarter.column {
-		float:left;
+	.mygallery {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.galleryImage {
 		margin:0 1% 2% 1%;
 		position: relative;
-		width:48%;
+		flex: 0 0 48%;
+		a {
+			display:block;
+			position: relative;
+		}
+		img {
+			aspect-ratio: 1;
+			display:block;
+			object-fit: cover;
+			height:100%;
+			width:100%;
+		}
 	}
-	
-	img {
-		display:block;
-	}
-	
+		
 	.overlay {
 		opacity:0;
 		position: absolute;
@@ -1224,53 +1233,58 @@ or wrap each row of columns in a <div class="row"> */
 		z-index: 20;
 		background: rgba(0, 0, 0, 0.5);
 		overflow: hidden;
-		transition: all 0.5s;
+		transition: opacity 0.5s;
 	}
 	
 	.close-overlay {
-  		display: none;
+		  display: none;
+	}
+	
+	.galleryImage a:focus-visible .overlay,
+	.galleryImage:hover .overlay {
+		opacity:1;
+		cursor:pointer;
+		transition: opacity 0.5s;
+	}
+	
+	svg {
+		color: #fff!important;
+		opacity: 0;
+		height: 40px;
+		position: absolute;
+			top: 50%;
+			left: 50%;
+		text-decoration: none;
+		text-align: center;
+		transition: opacity 0.5s;
+		transform: translateX(-50%) translateY(-50%);
+		width: 40px;
+		z-index: 100;
+	}
+	
+	.galleryImage a:focus-visible svg,
+	.galleryImage:hover svg {
+		opacity: 1;
+		transition: opacity 0.5s;
 	}
 }
 
-.gallery .column:hover .overlay {
-	opacity:1;
-	cursor:pointer;
-	transition: all 0.5s;
-}
-
-html .gallery .expand {
-	color: #fff!important;
-	opacity:0;
-	height: 60px;
-	line-height: 50px;
-	font-weight: 700;
-	font-size: 30px;
-	line-height: 1.4;
-	margin-left:-30px;
-	margin-top:-20px;
-	position: absolute;
-		top:50%;
-		left:50%;
-	text-decoration: none;
-	text-align: center;
-	transition: all 0.5s;
-	width: 60px;
-	z-index: 100;
-}
-
-.gallery .column:hover .expand {
-	opacity:1;
-	transition: all 0.5s;
-}
-
-	@media only screen and (min-width: 600px) {
-		
-		.gallery .one-quarter.column {
-			float:left;
-			margin:0 1%;
-			width:23%;
+	@media only screen and (min-width: 400px) {
+		.gallery {
+			.mygallery {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
 		}
-		
+	}
+	
+	@media only screen and (min-width: 900px) {
+		.gallery {
+			.galleryImage {
+				margin:0 1% 2% 1%;
+				flex: 0 0 23%;
+			}
+		}
 	}
 
 .boxes {
