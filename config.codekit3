@@ -710,6 +710,14 @@
       "oAP" : "\/page.php",
       "oF" : 0
     },
+    "\/README.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/README.html",
+      "oF" : 0
+    },
     "\/README.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -856,17 +864,17 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/screenshot.png" : {
-      "ft" : 32768,
-      "iS" : 15931,
+    "\/screenshot.jpg" : {
+      "ft" : 16384,
+      "iS" : 169461,
+      "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/screenshot.png",
+      "oAP" : "\/screenshot.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
-      "oT" : 1,
       "ou" : "lpckwebp-none",
-      "q" : 90,
+      "q" : 100,
       "rq" : 75
     },
     "\/search.php" : {
