@@ -1,3 +1,12 @@
-name: PHPCS Check with Annotations
-uses: 10up/wpcs-action@v1.7.0
-            
+name: WPCS check
+
+on: [pull_request, push]
+
+jobs:
+  phpcs:
+      name: WPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: WPCS check
+          uses: 10up/wpcs-action@stable
