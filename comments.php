@@ -1,44 +1,69 @@
 <?php
-if ( post_password_required() )
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package 3cb24
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
 	return;
+}
 ?>
 
-<div id="comments" class="comments-area clearfix">
-
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
-	<div id="commentbox">
-		<h2 class="comments-title">
+<div id="comments" class="comments-area">
+	<?php
+	if ( have_comments() ) {
+		?>
+		<h3 class="comments-title">
 			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'twentytwelve' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			$arch_comment_count = get_comments_number();
+			echo esc_html(
+				sprintf(
+					// Translators: 1. number of comments, 2. post title.
+					_nx(
+						'%1$s comment on &ldquo;%2$s&rdquo;',
+						'%1$s comments on &ldquo;%2$s&rdquo;',
+						$arch_comment_count,
+						'Comments Title',
+						'ARCHETYPE'
+					),
+					number_format_i18n( $arch_comment_count ),
+					get_the_title()
+				)
+			);
 			?>
-		</h2>
-
-		<ol class="commentlist">
-			<?php wp_list_comments("callback=my_custom_comments"); ?>
-		</ol><!-- .commentlist -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'twentytwelve' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentytwelve' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentytwelve' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
-
+		</h3>
+		<?php the_comments_navigation(); ?>
+		<ol class="comment-list">
+			<?php
+			wp_list_comments(
+				array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 64,
+				)
+			);
+			?>
+		</ol><!-- .comment-list -->
 		<?php
-		/* If there are no comments and comments are closed, let's leave a note.
-		 * But we only want the note on posts and pages that had comments in the first place.
-		 */
-		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php _e( 'Comments are closed.' , 'twentytwelve' ); ?></p>
-		<?php endif; ?>
-
-	</div>
-	<?php endif; // have_comments() ?>
-
-	<?php comment_form(); ?>
-
-</div><!-- #comments .comments-area -->
+		the_comments_navigation();
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) {
+			?>
+			<p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'ARCHETYPE' ); ?></p>
+			<?php
+		}
+	} // Check for have_comments().
+	comment_form();
+	?>
+</div><!-- #comments -->

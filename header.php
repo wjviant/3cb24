@@ -1,3 +1,13 @@
+<?php
+/**
+ * The header for our theme.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package 3cb24
+ */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

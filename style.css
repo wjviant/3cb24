@@ -5,10 +5,12 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.09
+Version: 1.10
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+Text Domain: 3cb24
 
 GitHub Theme URI: byintention/3cb24
 Primary Branch: main
@@ -1070,6 +1072,15 @@ or wrap each row of columns in a <div class="row"> */
 #header.darkHeader #nav2 a:hover {
   color: #5c9bbf;
 }
+#header.darkHeader #nav2 .menu-item-has-children > a:after {
+  background-image: url(images/icon-chev-down-white.svg);
+}
+#header.darkHeader #nav2 .menu-item-has-children .sub-menu a {
+  color: #fff;
+}
+#header.darkHeader #nav2 .menu-item-has-children .sub-menu a:hover {
+  color: #fff;
+}
 #header.scrollHeader {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -1082,10 +1093,19 @@ or wrap each row of columns in a <div class="row"> */
 #header.scrollHeader #nav2 a {
   color: #5c9bbf;
 }
-#header.scrollHeader #headerLogin {
+#header.scrollHeader #nav2 a:hover {
   color: #222;
 }
-#header.scrollHeader #nav2 a:hover {
+#header.scrollHeader #nav2 .menu-item-has-children > a:after {
+  background-image: url(images/icon-chev-down-grey.svg);
+}
+#header.scrollHeader #nav2 .sub-menu a {
+  color: #fff;
+}
+#header.scrollHeader #nav2 .sub-menu a:hover {
+  color: #fff;
+}
+#header.scrollHeader #headerLogin {
   color: #222;
 }
 
@@ -1858,27 +1878,51 @@ or wrap each row of columns in a <div class="row"> */
     font-weight: 400;
     height: 40px;
     line-height: 40px;
-    margin: 0 40px;
+    margin: 0 20px;
     text-decoration: none;
     text-transform: uppercase;
-  }
-  #nav2 ul li a:last-child {
-    margin-right: 0;
   }
   #nav2 ul li a:hover {
     color: rgb(128.6211453744, 177.4669603524, 205.3788546256);
   }
+  #nav2 ul li:last-child a {
+    margin-right: 0;
+  }
   #nav2 ul li a.sub_nav {
     display: none;
   }
-  .navclose {
-    display: none;
+  #nav2 ul li.menu-item-has-children {
+    position: relative;
+    z-index: 400;
+  }
+  #nav2 ul li.menu-item-has-children > a {
+    margin-right: 40px;
+  }
+  #nav2 ul li.menu-item-has-children > a:after {
+    background-image: url(images/icon-chev-down-grey.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 8px;
+    content: "";
+    display: inline-block;
+    height: 15px;
+    opacity: 1;
+    position: absolute;
+    right: 18px;
+    top: 11px;
+    transition: all 0.1s linear;
+    vertical-align: middle;
+    width: 15px;
+  }
+  #nav2 ul li.menu-item-has-children:hover > a:after {
+    opacity: 0;
+    transition: all 0.1s linear;
   }
   #nav2 ul li .sub-menu {
     background: #5c9bbf;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     display: none;
-    padding: 5px 0;
+    padding: 10px 0;
     position: absolute;
     top: 40px;
     left: 0;
@@ -1889,38 +1933,19 @@ or wrap each row of columns in a <div class="row"> */
   }
   #nav2 ul li .sub-menu li a {
     border: none;
+    color: #fff;
+    margin: 0 20px;
     overflow: hidden;
-    width: 180px;
+    width: 220px;
   }
-  #nav2 a.mobile_handle {
+  #nav2 ul li .sub-menu li a:hover {
+    color: #fff;
+  }
+  #nav2 ul li.openSubnav .sub-menu {
+    display: block;
+  }
+  .navclose {
     display: none;
-  }
-  #nav2 .menu-parent-item {
-    position: relative;
-    z-index: 400;
-  }
-  #nav2 .menu-parent-item a {
-    padding-right: 30px;
-  }
-  #nav2 .menu-parent-item > a:after {
-    background-image: url(images/icon-chev-down-white.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto 8px;
-    content: "";
-    display: inline-block;
-    height: 15px;
-    opacity: 1;
-    position: absolute;
-    right: 12px;
-    top: 11px;
-    transition: all 0.1s linear;
-    vertical-align: middle;
-    width: 15px;
-  }
-  #nav2 .menu-parent-item:hover > a:after {
-    opacity: 0;
-    transition: all 0.1s linear;
   }
 }
 /* Custom checkbox */

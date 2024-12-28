@@ -4,10 +4,12 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.09
+Version: 1.10
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+Text Domain: 3cb24
 
 GitHub Theme URI: byintention/3cb24
 Primary Branch: main
@@ -805,11 +807,27 @@ or wrap each row of columns in a <div class="row"> */
 		#headerLogin {
 			color:#fff;
 		}
-		#nav2 a {
-			color:#fff;
-		}
-		#nav2 a:hover {
-			color:$colour-link;
+		#nav2 {
+			a {
+				color:#fff;
+			}
+			a:hover {
+				color:$colour-link;
+			}
+			.menu-item-has-children {
+				> a:after {
+					background-image: url(images/icon-chev-down-white.svg);	
+				}
+				.sub-menu {
+					a {
+						color:#fff;
+					}
+					a:hover {
+						color:#fff;
+					}
+				}
+				
+			}
 		}
 	}
 	&.scrollHeader {
@@ -822,16 +840,30 @@ or wrap each row of columns in a <div class="row"> */
 				fill:#222;
 			}
 		}
-		#nav2 a {
-			color:$colour-link;
+		#nav2 {
+			a {
+				color:$colour-link;	
+			}
+			a:hover {
+				color:#222;
+			}
+			.menu-item-has-children > a:after {
+				background-image: url(images/icon-chev-down-grey.svg);	
+			}
+			.sub-menu {
+				a {
+					color:#fff;
+				}
+				a:hover {
+					color:#fff;
+				}
+			}
 		}
 		#headerLogin {
 			color:#222;
 		}	
 	}
-	&.scrollHeader #nav2 a:hover {
-		color:#222;
-	}
+
 }
 
 	@media only screen and (min-width: 600px) {
@@ -1745,22 +1777,81 @@ or wrap each row of columns in a <div class="row"> */
 						font-weight: $regular;
 						height:40px;
 						line-height:40px;
-						margin:0 40px;
+						margin:0 20px;
 						text-decoration:none;
 						text-transform: uppercase;
-						&:last-child {
-							margin-right:0;
-						}
 					}
 					
 					a:hover {
 						color:$colour-link-hover;
 					}	
 					
+					&:last-child a {
+						margin-right:0;
+					}
+					
 					a.sub_nav {
 						display:none;
 					}
 					
+					&.menu-item-has-children {
+						position:relative;
+						z-index:400;
+						a {
+							
+						}
+						> a {
+							margin-right:40px;
+						}
+						> a:after {
+							background-image: url(images/icon-chev-down-grey.svg);
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size:auto 8px;
+							content: "";
+							display:inline-block;
+							height:15px;
+							opacity:1;
+							position: absolute;
+								right: 18px;
+								top: 11px;
+							transition: all 0.1s linear;
+							vertical-align: middle;
+							width:15px;
+							
+						}
+						&:hover > a:after {
+							opacity:0;
+							transition: all 0.1s linear;
+						}
+						
+					}
+					.sub-menu {
+						background: $colour-link;
+						box-shadow:0px 2px 2px rgba(0,0,0,0.3);
+						display:none;
+						padding:10px 0;
+						position: absolute;
+							top: 40px;
+							left: 0;
+						z-index:200;
+						li {
+							float:none;
+							a {
+								border:none;
+								color: #fff;
+								margin:0 20px;
+								overflow:hidden;
+								width:220px;
+								&:hover {
+									color: #fff;
+								}
+							}
+						}
+					}
+					&.openSubnav .sub-menu {
+						display:block;
+					}
 				}
 			}
 		}
@@ -1768,62 +1859,11 @@ or wrap each row of columns in a <div class="row"> */
 		.navclose {
 			display:none;
 		}
-				
-		#nav2 ul li .sub-menu {
-			background:$colour-button;
-			box-shadow:0px 2px 2px rgba(0,0,0,0.3);
-			display:none;
-			padding:5px 0;
-			position: absolute;
-				top:40px;
-				left:0;
-			z-index:200;
-			li {
-				float:none;
-				a {
-					border:none;
-					overflow:hidden;
-					width:180px;
-				}
-			}
-		}
-			
-		
-		#nav2 a.mobile_handle {
-			display:none;
-		}
-		
-		#nav2 .menu-parent-item {
-			position:relative;
-			z-index:400;
-			a {
-				padding-right:30px;
-			}
-		}
-		
-		#nav2 .menu-parent-item > a:after {
-			background-image: url(images/icon-chev-down-white.svg);
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size:auto 8px;
-			content: "";
-			display:inline-block;
-			height:15px;
-			opacity:1;
-			position: absolute;
-				right:12px;
-				top:11px;
-			transition: all 0.1s linear;
-			vertical-align: middle;
-			width:15px;
-		}	
-		#nav2 .menu-parent-item:hover > a:after {
-			opacity:0;
-			transition: all 0.1s linear;
-		}
+
+
 	}
 
-	
+
 /* Custom checkbox */
 	
 	label {
