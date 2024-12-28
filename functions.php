@@ -50,7 +50,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 /**
  * Remove admin bar.
  */
-show_admin_bar(false);
+show_admin_bar( false );
 
 
 
@@ -58,7 +58,7 @@ show_admin_bar(false);
  * Remove emoji junk.
  */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
 
@@ -67,33 +67,30 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
  *
  * @param array $scripts List of scripts loaded by WP.
  */
-add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 function remove_jquery_migrate( &$scripts ) {
-	if( !is_admin() )
-	{
+	if ( ! is_admin() ) {
 		$scripts->remove( 'jquery' );
 		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
 	}
 }
-
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 
 
 /**
  * Add button class to blog pagination links.
  */
-add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
-add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
 function posts_link_attributes() {
 	return 'class="btn"';
 }
-
+add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
+add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
 
 
 /**
  * Custom read more function.
  */
 function custom_read_more() {
-	return '... <a class="read-more" href="'.get_permalink(get_the_ID()).'">Read more</a>';
+	return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">Read more</a>';
 }
 
 /**
@@ -101,8 +98,8 @@ function custom_read_more() {
  *
  * @param integer $limit Length of excerpt passed from get_the template tag.
  */
-function excerpt($limit) {
-	return wp_trim_words(get_the_excerpt(), $limit, custom_read_more());
+function excerpt( $limit ) {
+	return wp_trim_words( get_the_excerpt(), $limit, custom_read_more() );
 }
 
 
@@ -141,11 +138,11 @@ add_action( 'widgets_init', 'sidebar_widgets_init' );
  */
 function my_scripts_method() {
 	// Add toast.
-	wp_register_script( 'toast-script', get_template_directory_uri() . '/js/toaster.js', array( 'jquery' ) );
-	wp_enqueue_script( 'toast-script' );
+	// wp_register_script( 'toast-script', get_template_directory_uri() . '/js/toaster.js', array( 'jquery' ) );.
+	// wp_enqueue_script( 'toast-script' );.
 
-	// Add fcs javascript.
-	wp_register_script( 'fcs-script', get_template_directory_uri() . '/js/fcs.js', array( 'jquery' ) );
+	// Add FCS javascript.
+	wp_register_script( 'fcs-script', get_template_directory_uri() . '/js/fcs-min.js', array( 'jquery' ), 1.0, true );
 	wp_enqueue_script( 'fcs-script' );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
@@ -154,9 +151,9 @@ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 
 
-// Add ACF options page
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page('Global Settings');
+// Add ACF options page.
+if( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page( 'Global Settings' );
 }
 
 
@@ -175,7 +172,7 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
  * Custom admin CSS to remove plugin ads etc.
  */
 function register_custom_admin_css() {
-	wp_enqueue_style( 'custom_admin_css', get_template_directory_uri() . '/style-admin.css', array(), 1.0, true );
+	wp_enqueue_style( 'custom_admin_css', get_template_directory_uri() . '/style-admin.css', array(), 1.0, false );
 }
 add_action( 'admin_head', 'register_custom_admin_css' );
 

@@ -586,41 +586,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/error_log.log" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/error_log.log",
-      "oF" : 0
-    },
-    "\/sass\/social.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/social-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/sass\/social.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/sass\/social.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/sass\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -728,6 +693,18 @@
       "oAP" : "\/single.php",
       "oF" : 0
     },
+    "\/style-admin-min.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/style-admin-min-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/style-admin.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -761,18 +738,6 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/style-login-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/style-min-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -826,14 +791,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/tribe-events\/single-event.php",
-      "oF" : 0
-    },
-    "\/woocommerce\/cart\/mini-cart.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/woocommerce\/cart\/mini-cart.php",
       "oF" : 0
     }
   },

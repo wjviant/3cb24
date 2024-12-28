@@ -191,16 +191,8 @@
 	
 	// Add div for dropdown arrow to modified select boxes
 	$(window).on('load', function(){
-		$(".variations select").wrap("<div class=\"select-input\"></div>");
 		$(".wpcf7 select").wrap("<div class=\"select-input\"></div>");
 		$("#sidebar select").wrap("<div class=\"select-input\"></div>");
-		
-		$(".wc-pao-addon-select").wrap("<div class=\"select-input\"></div>");
-		
-		//$(".wpcf7 input[type='checkbox']").after("<span class=\"checkmark\"></span>");
-
 	});
-	
-
 	
 })(jQuery); // Fully reference $ after this point.
