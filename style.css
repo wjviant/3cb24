@@ -2,10 +2,10 @@
 /*
 Theme Name: 3CB 2024 
 Theme URI: https://byintention.co
-Description: Design by Arka, Wordpress theme by Nick at Intention
+Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.11
+Version: 1.12
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -42,71 +42,32 @@ Primary Branch: main
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    min-height: 100vh;
+    height: 100%;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     text-align: left;
     width: 100%;
     z-index: 1500;
+    /* Second Level */
   }
-  #nav2 a.navclose {
-    background-image: url(../images/icon-neg.svg);
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: auto 20px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    float: left;
-    font-size: 17px;
-    padding-left: 22px;
-    position: relative;
-    text-decoration: none;
-    width: 50%;
-    z-index: 999;
-  }
-  #nav2 .navtel {
-    color: #fff;
-    float: right;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: right;
-    text-decoration: none;
-    width: 50%;
+  #nav2 .navInner {
+    height: calc(100% - 120px);
+    margin-top: 100px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   #nav2.navopen {
     display: block;
   }
-  .arrow_down {
-    background-image: url(../images/icon-chev-down-white.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 25px;
-    -moz-transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-    width: 25px;
-  }
-  .open {
-    -ms-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    -moz-transition: all 0.1s linear;
-    -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear rotate(0.0001deg);
-  }
-  #nav2 {
-    /* Second Level */
-  }
   #nav2 ul {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
     max-width: 300px;
+    overflow-y: auto;
   }
   #nav2 ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -144,20 +105,22 @@ Primary Branch: main
     display: block;
     margin: 0;
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
     padding: 0;
     position: relative;
-    -webkit-transition: max-height 0.2s;
-    -moz-transition: max-height 0.2s;
-    transition: max-height 0.2s;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
     width: 100%;
     z-index: 999999;
   }
   #nav2 ul ul.show {
     max-height: 500px;
-    -webkit-transition: max-height 0.8s;
-    -moz-transition: max-height 0.8s;
-    transition: max-height 0.8s;
+    opacity: 1;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
   }
   #nav2 ul ul li:first-child {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -187,6 +150,26 @@ Primary Branch: main
   }
   #nav2 ul.sub-menu ul.sub-menu {
     display: none;
+  }
+  .arrow_down {
+    background-image: url(images/icon-chev-down-white.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 25px;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    width: 25px;
+  }
+  .open {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -moz-transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear rotate(0.0001deg);
   }
 }
 * {
@@ -1041,6 +1024,10 @@ or wrap each row of columns in a <div class="row"> */
   background: #fff;
 }
 
+body.mobilenavopen {
+  overflow: hidden;
+}
+
 #header {
   background: transparent;
   height: 80px;
@@ -1079,7 +1066,7 @@ or wrap each row of columns in a <div class="row"> */
   color: #fff;
 }
 #header.darkHeader #nav2 .menu-item-has-children .sub-menu a:hover {
-  color: #fff;
+  color: #5c9bbf;
 }
 #header.scrollHeader {
   background: rgba(255, 255, 255, 0.95);
@@ -1090,24 +1077,6 @@ or wrap each row of columns in a <div class="row"> */
 #header.scrollHeader svg path {
   fill: #222;
 }
-#header.scrollHeader #nav2 a {
-  color: #5c9bbf;
-}
-#header.scrollHeader #nav2 a:hover {
-  color: #222;
-}
-#header.scrollHeader #nav2 .menu-item-has-children > a:after {
-  background-image: url(images/icon-chev-down-grey.svg);
-}
-#header.scrollHeader #nav2 .sub-menu a {
-  color: #fff;
-}
-#header.scrollHeader #nav2 .sub-menu a:hover {
-  color: #fff;
-}
-#header.scrollHeader #headerLogin {
-  color: #222;
-}
 
 @media only screen and (min-width: 600px) {
   #header {
@@ -1115,6 +1084,33 @@ or wrap each row of columns in a <div class="row"> */
   }
   #header.scrollHeader {
     height: 95px;
+  }
+  #header.scrollHeader {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #222;
+    transition: all 0.1s ease-in-out;
+  }
+  #header.scrollHeader svg path {
+    fill: #222;
+  }
+  #header.scrollHeader #nav2 a {
+    color: #5c9bbf;
+  }
+  #header.scrollHeader #nav2 a:hover {
+    color: #222;
+  }
+  #header.scrollHeader #nav2 .menu-item-has-children > a:after {
+    background-image: url(images/icon-chev-down-grey.svg);
+  }
+  #header.scrollHeader #nav2 .sub-menu a {
+    color: #fff;
+  }
+  #header.scrollHeader #nav2 .sub-menu a:hover {
+    color: #fff;
+  }
+  #header.scrollHeader #headerLogin {
+    color: #222;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1181,6 +1177,13 @@ or wrap each row of columns in a <div class="row"> */
 .mobilenavopen #headerLogo svg path {
   fill: #fff;
   transition: all 0.2s ease-in-out;
+}
+
+.post-type-archive-tribe_events #header svg path,
+.page-id-242 #headerLogo svg path,
+.eckb-front-end-body #headerLogo svg path,
+.single-tribe_events #headerLogo svg path {
+  fill: #222;
 }
 
 #nav2 {
@@ -1354,6 +1357,9 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 @media only screen and (min-width: 830px) {
+  .banners .container {
+    max-width: 900px;
+  }
   .banners .inner {
     top: 50%;
   }
@@ -1856,6 +1862,14 @@ or wrap each row of columns in a <div class="row"> */
   height: auto;
   width: 30px;
 }
+.btt path {
+  fill: #eee;
+  transition: color 0.2s linear;
+}
+.btt a:hover path {
+  fill: #fff;
+  transition: color 0.2s linear;
+}
 
 /* #Media Queries */
 @media only screen and (min-width: 600px) {
@@ -1876,7 +1890,8 @@ or wrap each row of columns in a <div class="row"> */
   #nav2 {
     display: block;
     position: absolute;
-    top: 45px;
+    top: auto;
+    bottom: 0;
     right: 1%;
     width: auto;
   }
@@ -1898,14 +1913,14 @@ or wrap each row of columns in a <div class="row"> */
     display: block;
     font-size: 20px;
     font-weight: 400;
-    height: 40px;
+    height: 50px;
     line-height: 40px;
     margin: 0 20px;
     text-decoration: none;
     text-transform: uppercase;
   }
   #nav2 ul li a:hover {
-    color: rgb(128.6211453744, 177.4669603524, 205.3788546256);
+    color: #222;
   }
   #nav2 ul li:last-child a {
     margin-right: 0;
@@ -1941,14 +1956,19 @@ or wrap each row of columns in a <div class="row"> */
     transition: all 0.1s linear;
   }
   #nav2 ul li .sub-menu {
-    background: #5c9bbf;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    display: none;
-    padding: 10px 0;
+    background: #222;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: visible;
+    padding: 0;
+    pointer-events: none;
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 0;
-    z-index: 200;
+    transition: all 0.5s ease;
+    z-index: 9999;
   }
   #nav2 ul li .sub-menu li {
     float: none;
@@ -1956,18 +1976,39 @@ or wrap each row of columns in a <div class="row"> */
   #nav2 ul li .sub-menu li a {
     border: none;
     color: #fff;
+    height: 50px;
+    line-height: 50px;
     margin: 0 20px;
     overflow: hidden;
     width: 220px;
   }
   #nav2 ul li .sub-menu li a:hover {
-    color: #fff;
+    color: #5c9bbf;
   }
-  #nav2 ul li.openSubnav .sub-menu {
+  #nav2 ul li .sub-menu li:first-child {
+    margin-top: 10px;
+  }
+  #nav2 ul li .sub-menu li:last-child {
+    margin-bottom: 10px;
+  }
+  #nav2 ul li .sub-menu:before {
+    background: #222;
+    content: "";
     display: block;
+    height: 20px;
+    position: absolute;
+    top: -5px;
+    left: 35px;
+    transform: rotate(45deg);
+    width: 20px;
   }
-  .navclose {
-    display: none;
+  #nav2 ul li.menu-item-has-children:hover .sub-menu {
+    max-height: 9999px;
+    opacity: 1;
+    overflow: visible;
+    padding: 0;
+    pointer-events: all;
+    transition: all 0.5s ease;
   }
 }
 /* Custom checkbox */
@@ -2367,6 +2408,168 @@ html #tribe-events-pg-template {
 .tcb_briefing h3 {
   margin-bottom: 10px;
   padding-top: 30px;
+}
+
+html .eckb-kb-template {
+  padding-top: 100px !important;
+}
+
+#eckb-article-page-container-v2 .epkb-doc-search-container .epkb-doc-search-container__title {
+  font-weight: bold;
+}
+
+html #eckb-article-page-container-v2 h1 {
+  font-family: "D-din";
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 16px !important;
+  text-transform: none;
+}
+
+#slotTool {
+  background: #efefef;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.slotToolSlot {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.slotToolSlot form {
+  display: inline;
+}
+
+input[type=submit].slotIcon {
+  background: #fff;
+  background-size: cover;
+  border: 1px solid #000;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: top;
+  width: 30px;
+}
+
+input[type=submit].slotIcon.disabled {
+  cursor: not-allowed;
+}
+
+html .tribe-events-event-meta {
+  display: none;
+}
+
+.toaster-wrapper {
+  position: fixed;
+  width: 250px;
+}
+
+.toaster-wrapper.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.toaster-wrapper.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.toaster-wrapper.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.toaster-wrapper.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.toast {
+  background-color: #5c9bbf;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toast.toast-show {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.toast.toast-hide {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.toast-content {
+  color: white;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+#attendanceRoster {
+  background: #eee;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+#attendanceRoster .attendanceCol {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#attendanceRoster ul {
+  list-style: none;
+  margin: 0 0 30px 0;
+}
+
+#attendanceRoster li {
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+#attendanceRoster li a {
+  display: inline-block;
+  line-height: 20px;
+}
+
+#attendanceRoster img {
+  border-radius: 100%;
+  height: 20px;
+  margin-right: 3px;
+  vertical-align: top;
+  width: 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+  #attendanceRoster {
+    padding: 30px;
+  }
+  #attendanceRoster .wrap {
+    display: flex;
+  }
+  #attendanceRoster .attendanceCol {
+    flex: 1 1;
+    margin: 0;
+  }
+}
+html #tribe-events-pg-template {
+  max-width: 800px;
 }
 
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */

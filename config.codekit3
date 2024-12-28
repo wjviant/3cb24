@@ -273,26 +273,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/icon-location.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-location.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/icon-lock.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-lock.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/images\/icon-mail.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -318,16 +298,6 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/images\/icon-mobile.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/icon-navclose.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-navclose.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -363,16 +333,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/images\/icon-star.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-star.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/images\/icon-zoom.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -392,19 +352,6 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
-    },
-    "\/images\/site_logo.png" : {
-      "ft" : 32768,
-      "iS" : 15713,
-      "oA" : 0,
-      "oAP" : "\/images\/site_logo.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
     },
     "\/includes\/flexible-content.php" : {
       "cB" : 0,

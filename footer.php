@@ -3,16 +3,11 @@
 		<footer id="footer" class="clear">
 			<div class="container">
 				<div class="twelve columns">
-					
 					<h3>Contact Us</h3>
-					
 					<p><a href="<?php the_field( 'teamspeak','options' ); ?>">Join Teamspeak Server</a><br>
 					<a href="<?php the_field( 'discord','options' ); ?>">Join Discord Server</a></p>
-					
 					<?php get_template_part( 'includes/social' ); ?>
-					
-					<p>&copy; <?php the_field( 'footer_message','options' ); ?></p>
-					
+					<p class="has-small-font-size">&copy; <?php the_field( 'footer_message','options' ); ?></p>
 				</div>
 				<div class="btt">
 					<a href="#header" onclick="scrollToTop();return false"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"

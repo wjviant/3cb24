@@ -8,28 +8,28 @@
  */
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ); ?>/style.css?v=<?php echo date('dmy');?>">
 	<?php wp_head(); ?> 
 </head>
 <body <?php body_class(); ?>>
 	<?php acf_form_head(); ?>
 	<div class="wrap">	
-		<header id="header" <?php if(get_field('dark_header')) { echo 'class="darkHeader"'; }?>>
+		<header id="header" <?php echo ( get_field( 'dark_header' ) ) ? 'class="darkHeader"' : ''; ?>>
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span>Menu</span></button></div>
-				<div id="headerContactMobile"><a href="<?php bloginfo('url'); ?>/contact-us/" class="">Contact</a></div>
+				<div id="headerContactMobile"><a href="<?php echo esc_url( home_url() ); ?>/contact-us/" class="">Contact</a></div>
 				<div id="headerLogo">
-					<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>">
 						<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-						  viewBox="0 0 500.000000 530.000000"
-						 preserveAspectRatio="xMidYMid meet">
+						viewBox="0 0 500.000000 530.000000"
+						preserveAspectRatio="xMidYMid meet">
 						<g transform="translate(0.000000,530.000000) scale(0.100000,-0.100000)"
-						 stroke="none">
+						stroke="none">
 						<path d="M2484 5029 c-71 -27 -137 -88 -171 -157 -25 -51 -28 -67 -27 -157 0
 						-89 4 -109 33 -180 30 -73 34 -92 38 -213 5 -127 7 -134 29 -149 22 -14 26
 						-14 49 1 25 16 25 18 25 153 0 75 -5 176 -11 224 -13 100 -1 198 29 238 36 49
@@ -138,19 +138,25 @@
 					</a>
 				</div>
 				<nav id="nav2" class="clearfix">
-					<?php wp_nav_menu( array(
-						'container' => false,
-						'theme_location' => 'main-menu'
-					 )); ?>
+					<div class="navInner">
+					<?php
+					wp_nav_menu(
+						array(
+							'container'      => false,
+							'theme_location' => 'main-menu',
+						)
+					);
+					?>
+					</div>
 				</nav>
 				<div id="headerLogin">
-					<strong>Welcome: </strong> 
-					<?php if (!is_user_logged_in()) { ?>
+					<strong>Welcome: </strong>
+					<?php if ( ! is_user_logged_in() ) { ?>
 						<a href="/wp-login.php">Login</a>
 					<?php } else { ?>
-						Logged in as <span class="username"><?php echo wp_get_current_user()->user_login;?></span>
-					<?php  } ?>	
+						Logged in as <span class="username"><?php echo esc_html( wp_get_current_user()->user_login ); ?></span>
+					<?php } ?>	
 				</div>
 			</div>
-		</header>	
+		</header>
 		<div class="contentWrap">	

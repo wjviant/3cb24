@@ -131,60 +131,45 @@
 	  hideClass: 'toast-hide',
 	  showClass: 'toast-show',
 	  hideAfter: 3000,
-	  stacking: true,
+	  stacking: true
 	}
 	
 		
 
 	// Mobile nav
-
 	$('.menu-trigger').click(function() {
-			//console.log('open');
-			$('#nav2').fadeToggle(300);
-			$('body').toggleClass('mobilenavopen');
-			$(this).toggleClass('navOpen');   
-		});
-		
-		$('.navclose').click(function() {
-			//console.log('close');
-			$('#nav2').fadeOut(300);
-			$('body').toggleClass('mobilenavopen'); 
-		});
-	    
-	    // Dropdown triggers
-      $('#nav2 li.menu-parent-item').prepend( '<a class="sub_nav"><div class="arrow_down"></div></a>' );
-      
-      $('.sub_nav').click(function() {
-        $(this).toggleClass('open');
-        $(this).siblings('ul').toggleClass('show');   
-      });
-	    
-      // End mobile nav
+		//console.log('open');
+		$('#nav2').fadeToggle(300);
+		$('body').toggleClass('mobilenavopen');
+		$(this).toggleClass('navOpen');
+	});
 
-	  
+	// Dropdown triggers
+	$('#nav2 li.menu-item-has-children').prepend( '<a class="sub_nav"><div class="arrow_down"></div></a>' );
+
+	$('.sub_nav').click(function() {
+		$(this).toggleClass( 'open' );
+		$(this).siblings( 'ul' ).toggleClass( 'show' );
+    });
+
+	// End mobile nav
+
+	
 	  // Dropdown navigation for desktop size
 		var curz = 99;
 		var screen = $(window);
-		if (screen.width() > 1200) {
-			$("#nav2 li.menu-item-has-children").hover(function() {
+		if ( screen.width() > 1200 ) {
+			$("#nav2 li.menu-item-has-childrenx").hover(function() {
 			    var timeout = $(this).data("timeout");
 			    if (timeout) clearTimeout(timeout);
-			$(this).children("ul").slideDown(0).css({ "z-index":curz++ });
-			 }, function() {
+				$(this).children("ul").slideDown(0).css({ "z-index":curz++ });
+			}, function() {
 			   $(this).data("timeout", setTimeout($.proxy(function() {
 			   $(this).find("ul").slideUp(0);
 			 }, this), 0));
 			});
 		}
 		
-		// 3CB slot tool 
-		//var userName = $('.username').text();
-		//console.log(userName);
-		//$('.slotIcon').click(function() {
-			
-		 // console.log(userName);
-		  
-		//});   
 		
 		// Add scroll class to header 
 		$(function() {
