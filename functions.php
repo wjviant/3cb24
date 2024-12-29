@@ -149,6 +149,15 @@ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 
 
+// Events stuff
+
+add_action( 'tribe_template_before_include:events/v2/components/events-bar', function( $file, $name, $template ) {
+  echo '<h1 id="eventListingTitle">Events</h1>';
+}, 10, 3 );
+
+
+
+
 
 
 // Add ACF options page.

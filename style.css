@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.13
+Version: 1.14
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2053,29 +2053,59 @@ html .wcpt-product-form select {
 /*
 	Events page template
 */
-html #tribe-events-pg-template {
-  max-width: 800px;
-}
-html .tribe-events-page-template {
+html .single-tribe_events {
   padding-top: 100px;
 }
-html .tribe-events-page-template .tribe-events-notices ul {
+html .single-tribe_events .contentWrap {
+  background: #fafafa;
+}
+html .single-tribe_events #tribe-events-pg-template {
+  max-width: 800px;
+}
+html .single-tribe_events #tribe-events-pg-template .tribe-events-schedule h2 {
+  font-size: 20px;
+}
+html .single-tribe_events #tribe-events-pg-template .tribe-events-notices ul {
   list-style: none;
   margin: 0;
 }
-html .tribe-events-page-template .tribe-events-notices ul li {
+html .single-tribe_events #tribe-events-pg-template .tribe-events-notices ul li {
   margin-bottom: 10px;
 }
-html .tribe-events-page-template .tribe-events-schedule h2 {
-  font-size: 20px;
+html .single-tribe_events #tribe-events-pg-template .tribe-events-c-subscribe-dropdown__container {
+  display: none;
+}
+html .single-tribe_events #tribe-events-pg-template .tribe_events {
+  overflow: visible;
+}
+html .single-tribe_events .tcb_briefing {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+  padding: 30px;
+}
+html .single-tribe_events .tcb_briefing h3 {
+  margin-bottom: 10px;
+  padding-top: 30px;
+}
+html .tribe-events-view--list {
+  background: #fafafa;
+}
+html .tribe-events-view--list #eventListingTitle {
+  flex: 0 0 100%;
+  margin-bottom: 30px;
+  text-align: center;
 }
 html .tribe-events-view--list .tribe-events-l-container {
   max-width: 800px;
 }
-html .tribe-events-view--list .tribe-events-c-events-bar {
+html .tribe-events-view--list .tribe-events-header .tribe-events-c-top-bar {
   display: none;
 }
-html .tribe-events-view--list .tribe-events-c-subscribe-dropdown__container {
+html .tribe-events-view--list .tribe-events-header .tribe-events-c-events-bar {
+  display: none;
+}
+html .tribe-events-view--list .tribe-events-header .tribe-events-c-subscribe-dropdown__container {
   display: none;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__month-separator-text {
@@ -2127,8 +2157,9 @@ html .tribe-events-calendar-latest-past article.tribe-common-g-row .tribe-events
 html .tribe-common-g-row.tribe-events-calendar-list__event-row,
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row {
   align-items: flex-start;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  padding: 30px;
 }
 html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-calendar-list__event-date-tag,
 html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-calendar-latest-past__event-date-tag,
@@ -2136,6 +2167,7 @@ html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-eve
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-events-calendar-latest-past__event-date-tag {
   background: #5c9bbf;
   color: #fff;
+  font-weight: 700;
   padding: 10px;
 }
 html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-calendar-list__event-date-tag time,
@@ -2157,9 +2189,10 @@ html .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest
 	Attendance tool
 */
 #attendanceRoster {
-  background: #eee;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 30px;
   transition: all 0.2s linear;
 }
 #attendanceRoster a,
@@ -2168,17 +2201,19 @@ html .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest
   transition: all 0.2s linear;
 }
 #attendanceRoster .attendanceCol {
-  border: 1px solid #ddd;
   margin-bottom: 20px;
-  padding: 10px 10px 80px 10px;
+  padding: 0 0 80px 0;
   position: relative;
 }
 #attendanceRoster .attendanceCol form {
   margin: 0;
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 0;
   width: 100%;
+}
+#attendanceRoster .attendanceCol form input {
+  padding: 10px;
 }
 #attendanceRoster ul {
   list-style: none;
@@ -2217,9 +2252,10 @@ html .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest
 	Slotting tool
 */
 #slotTool {
-  background: #efefef;
-  margin-bottom: 50px;
-  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 30px;
 }
 
 .slotToolSlot {
@@ -2250,16 +2286,16 @@ input[type=submit].slotIcon.disabled {
   cursor: not-allowed;
 }
 
-.unit {
-  margin-bottom: 30px;
+#slotToolButtons {
+  padding: 30px;
+  text-align: center;
+}
+#slotToolButtons br {
+  display: none;
 }
 
-.tcb_briefing {
-  padding-bottom: 50px;
-}
-.tcb_briefing h3 {
-  margin-bottom: 10px;
-  padding-top: 30px;
+.unit {
+  margin-bottom: 30px;
 }
 
 /* 
