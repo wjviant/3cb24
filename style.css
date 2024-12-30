@@ -249,7 +249,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 h2 {
@@ -321,7 +321,7 @@ p.has-large-font-size {
     font-size: 18px;
   }
   h1 {
-    font-size: 120px;
+    font-size: 100px;
   }
   h2 {
     font-size: 80px;
@@ -1341,6 +1341,9 @@ body.mobilenavopen {
   transform: translateY(-50%);
   width: 100%;
 }
+.banners .inner h1 {
+  font-size: 60px;
+}
 .banners .inner h1, .banners .inner h2 {
   color: #fff;
 }
@@ -1363,6 +1366,9 @@ body.mobilenavopen {
   }
   .banners .inner {
     top: 50%;
+  }
+  .banners .inner h1 {
+    font-size: 120px;
   }
 }
 .filler {
@@ -2078,6 +2084,13 @@ html .single-tribe_events #tribe-events-pg-template .tribe-events-c-subscribe-dr
 html .single-tribe_events #tribe-events-pg-template .tribe_events {
   overflow: visible;
 }
+html .single-tribe_events #tribe-events-pg-template .tribe-events-single-event-title {
+  text-align: center;
+}
+html .single-tribe_events #tribe-events-pg-template .tribe-events-schedule h2 {
+  text-align: center;
+  width: 100%;
+}
 html .single-tribe_events .tcb_briefing {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
@@ -2109,7 +2122,9 @@ html .tribe-events-view--list .tribe-events-header .tribe-events-c-events-bar {
   display: none;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__month-separator-text {
+  flex: 0 0 100%;
   font-size: 20px;
+  text-align: center;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-date-tag {
   background: #5c9bbf;
@@ -2121,6 +2136,12 @@ html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper {
   padding-right: 0;
+}
+html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper h3 a {
+  color: #5c9bbf;
+}
+html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper h3 a:hover {
+  color: #222;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper .tribe-events-calendar-list__event .tribe-events-calendar-list__event-featured-image-wrapper {
   margin-bottom: 20px;
@@ -2307,17 +2328,137 @@ input[type=submit].slotIcon.disabled {
 	Knowledge base/wiki pages
 */
 html .eckb-kb-template {
-  padding-top: 100px !important;
+  padding-top: 100px;
 }
-html #eckb-article-page-container-v2 h1 {
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset #eckb-article-body h1,
+html .eckb-kb-template #eckb-article-page-container-v2 #eckb-article-body h1 {
   font-family: "D-din";
-  font-size: 60px;
-  font-weight: bold;
+  font-size: 50px;
+  font-weight: 700;
   margin-bottom: 16px !important;
   text-transform: none;
 }
-html #eckb-article-page-container-v2 .epkb-doc-search-container .epkb-doc-search-container__title {
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container {
+  background: #fafafa;
+  margin-bottom: 30px !important;
+  padding: 50px 0 60px 0;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container h1.epkb-doc-search-container__title,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container h1.epkb-doc-search-container__title {
+  font-weight: bold !important;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container #epkb_search_form #epkb_search_terms,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container #epkb_search_form #epkb_search_terms {
+  border: 2px solid #ccc;
+  border-right: 0;
+  border-radius: 0 !important;
+  font-family: "D-DIN", arial, sans-serif;
+  padding-left: 20px !important;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container #epkb_search_form #epkb-search-kb,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container #epkb_search_form #epkb-search-kb {
+  background: #5c9bbf;
+  border: #5c9bbf;
+  border-radius: 0 !important;
+  font-family: "D-DIN", arial, sans-serif;
+  text-shadow: none;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container .epkb-doc-search-container__title,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container .epkb-doc-search-container__title {
+  color: #222;
+  font-weight: 700;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full {
+  background: #fafafa;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container {
+  background: transparent;
+  margin-bottom: 0 !important;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container a,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container a {
+  color: #5c9bbf;
+  text-decoration: none;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container a:hover,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list {
+  background: #fafafa;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px !important;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  flex: 0 0 31.333% !important;
+  font-size: 16px !important;
+  margin: 0 1% 2% 1% !important;
+  padding: 30px;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section h2.epkb-cat-name,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section h2.epkb-cat-name {
+  color: #222 !important;
+  font-weight: bold !important;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text {
+  color: #5c9bbf;
+  font-size: 16px;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text:hover,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text:hover {
+  color: #222;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text {
+  color: #5c9bbf;
+  font-size: 16px;
   font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a {
+  color: #5c9bbf;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a:hover,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a:hover {
+  color: #222;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-sub-category li,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-sub-category li {
+  padding: 5px 0;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-cat-count,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-cat-count {
+  font-size: 10px;
+  padding: 3px 6px;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-section-body,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-section-body {
+  padding: 0 0 20px 10px;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section li .epkb-category-level-2-3__cat-icon:before,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section li .epkb-category-level-2-3__cat-icon:before {
+  content: "\f115";
+  font-family: "fontawesome";
+  position: relative;
+  top: 2px;
+  vertical-align: middle;
+}
+html .eckb-kb-template .tax-epkb_post_type_1_category {
+  padding-top: 100px;
 }
 
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */

@@ -95,7 +95,7 @@ h3, h4, h5, h6 {
 	
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; text-decoration: none; }
 
-h1 { font-size: 60px; }
+h1 { font-size: 55px; }
 h2 { font-size: 45px; }
 h3 { font-size: 35px; }
 h4 { font-size: 25px; }
@@ -135,7 +135,7 @@ p.has-large-font-size { font-size: 18px; line-height: 1.4;}
 			font-size: $base-font-size;
 		}
 		
-		h1 { font-size: 120px; }
+		h1 { font-size: 100px; }
 		h2 { font-size: 80px; }
 		h3 { font-size: 50px; }
 		h4 { font-size: 35px; }
@@ -1155,6 +1155,10 @@ body.mobilenavopen  {
 		transform: translateY(-50%);
 		width:100%;
 		
+		h1 {
+			font-size: 60px;
+		}
+		
 		h1,h2 {
 			color:#fff;
 		}
@@ -1183,7 +1187,9 @@ body.mobilenavopen  {
 			}
 			.inner {
 				top: 50%;
-				
+				h1 {
+					font-size: 120px;
+				}
 			}
 		}
 	
@@ -2023,6 +2029,15 @@ html {
 				overflow: visible;
 			}
 			
+			.tribe-events-single-event-title {
+				text-align: center;
+			}
+			
+			.tribe-events-schedule h2 {
+				text-align: center;
+				width: 100%;
+			}
+			
 			
 		}
 
@@ -2072,7 +2087,9 @@ html {
 		.tribe-events-calendar-list {
 			
 			.tribe-events-calendar-list__month-separator-text {
+				flex: 0 0 100%;
 				font-size: 20px;	
+				text-align: center;
 			}
 			
 			
@@ -2087,8 +2104,11 @@ html {
 			
 			.tribe-events-calendar-list__event-wrapper {
 				padding-right: 0;
-				h3 {
-					
+				h3 a {
+					color: $colour-link;
+					&:hover {
+						color: $colour-text;
+					}
 				}
 				.tribe-events-calendar-list__event {
 					
@@ -2312,20 +2332,167 @@ input[type="submit"].slotIcon {
 */
 
 html {
+	
 	.eckb-kb-template {
-		padding-top:100px!important;
+		padding-top:100px;
+	
+		#epkb-main-page-container.epkb-css-full-reset,
+		#eckb-article-page-container-v2 {
+			
+			
+			#eckb-article-body {
+				h1 {
+					font-family: "D-din";
+					font-size: 50px;
+					font-weight: $bold;
+					margin-bottom: 16px!important;
+					text-transform: none;
+				}
+			}
+			
+			.epkb-doc-search-container {
+				background: #fafafa;
+				margin-bottom: 30px!important;
+				padding: 50px 0 60px 0;
+				
+				h1.epkb-doc-search-container__title {
+					font-weight: bold!important;
+				}
+				#epkb_search_form {
+					#epkb_search_terms {
+						border: 2px solid #ccc;
+						border-right:0; 
+						border-radius: 0!important;
+						font-family: $base-font-family;
+						padding-left: 20px!important;
+					}
+					#epkb-search-kb {
+						background: $colour-link;
+						border: $colour-link;
+						border-radius: 0!important;
+						font-family: $base-font-family;
+						text-shadow: none;
+					}
+				}
+				.epkb-doc-search-container__title {
+					color: #222;
+					font-weight: $bold;
+				}
+			}
+			
+			.epkb-full {
+				background: #fafafa;
+				
+				
+				
+				
+					
+				#epkb-content-container {
+					background: transparent;
+					margin-bottom:0!important;
+					
+					a {
+						color: $colour-link;
+						text-decoration: none;
+						&:hover {
+							color: #222;
+							text-decoration: underline;
+						}
+					}
+					
+					.epkb-section-container {
+						
+						.eckb-categories-list {
+							background: #fafafa;
+							display: flex!important;
+								flex-wrap: wrap;
+								justify-content: center;
+							padding-bottom: 50px!important;
+							section {
+								background: #fff;
+								box-shadow: 0 0 10px rgba(0,0,0,0.1);
+								box-sizing: border-box;
+								flex: 0 0 31.333%!important;
+								font-size: 16px!important;
+								margin: 0 1% 2% 1%!important;
+								padding: 30px;
+								
+								h2.epkb-cat-name {
+									color: #222!important;
+									font-weight: bold!important;
+								}
+								.eckb-article-title__text {
+									color: $colour-link;
+									font-size: 16px;
+									&:hover {
+										color: #222;
+									}
+								}
+								.epkb-category-level-2-3__cat-name_text {
+									color: $colour-link;
+									font-size: 16px;
+									font-weight: bold;
+									margin-right: 5px;
+									margin-left: 5px;
+									a {
+										color: $colour-link;
+										&:hover {
+											color: #222;
+										}	
+									}
+									
+								}
+								.epkb-sub-category li {
+									padding:5px 0;
+								}
+								.epkb-cat-count {
+									font-size: 10px;
+									padding: 3px 6px;
+								}
+								.epkb-section-body {
+									padding:0 0 20px 10px;
+								}
+								.epkb-main-category {
+									
+								}
+								li .epkb-category-level-2-3__cat-icon:before {
+									content: "\f115";
+									font-family: "fontawesome";
+									position: relative;
+										top:2px;
+									vertical-align: middle;
+								}
+								
+							}
+						}
+					}
+				}
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+		.tax-epkb_post_type_1_category {
+			padding-top:100px;
+		}
+		
+		
+		
+		
+		
+		
 	}
 	
-	#eckb-article-page-container-v2 h1 {
-		font-family: "D-din";
-		font-size:60px;
-		font-weight:bold;
-		margin-bottom:16px!important;
-		text-transform:none;
-	}	
-	#eckb-article-page-container-v2 .epkb-doc-search-container .epkb-doc-search-container__title {
-		font-weight:bold;
-	}
+	
+	
+
 }	
 
 

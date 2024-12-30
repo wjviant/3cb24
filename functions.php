@@ -24,7 +24,7 @@ add_action( 'after_setup_theme', 'threecb_theme_setup' );
 function threecb_css() {
 	wp_enqueue_style( 'threecb-style', get_stylesheet_uri(), array(), '1.0' );
 }
-add_action( 'wp_enqueue_scripts', 'threecb_css', 200 );
+add_action( 'wp_enqueue_scripts', 'threecb_css', 1000, 'epkb-mp-frontend-category-layout-css' );
 
 
 
@@ -38,6 +38,8 @@ function remove_unwanted_css() {
 	wp_deregister_style( 'classic-theme-styles' );
 	wp_dequeue_style( 'classic-theme-styles' );
 	wp_dequeue_style( 'tcb-roster' ); // Roster plugin styles are in main CSS file.
+	wp_dequeue_style( 'epkb-mp-frontend-category-layout-css' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
 

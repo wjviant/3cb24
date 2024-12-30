@@ -20,7 +20,7 @@
 		</footer>
 		
 	</div>
-
+	
 	<?php wp_footer(); ?>
 	
 	<script type="module">
@@ -31,6 +31,27 @@
 			  pswpModule: () => import('/wp-content/themes/3cb24/js/photoswipe.esm.min.js')
 		});
 		lightbox.init();
+	</script>
+	
+	<script>
+		jQuery(document).ready(function() {
+		//jQuery(window).on('load', function() {
+			jQuery('.epkb-doc-search-container__title').removeAttr('style');
+			jQuery('.epkb-doc-search-container').removeAttr('style');
+			jQuery('.eckb-kb-template').removeAttr('style');
+			jQuery('.eckb-kb-template').removeAttr('style');
+			jQuery('#epkb_search_terms').removeAttr('style');
+			jQuery('#epkb-search-kb').removeAttr('style');
+			jQuery('.epkb-category-level-1').removeAttr('style');
+			jQuery('.epkb-cat-name-count-container').removeAttr('style');
+			jQuery('.epkb-top-category-box').removeAttr('style');
+			jQuery('.epkb-category-level-2-3__cat-name_text a').removeAttr('style');
+			jQuery('.epkb-sub-category li').removeAttr('style');
+			jQuery('.epkb-section-body').removeAttr('style');
+			
+			
+			
+		});
 	</script>
 	
 </body>

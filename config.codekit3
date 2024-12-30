@@ -792,6 +792,14 @@
       "oA" : 0,
       "oAP" : "\/tribe-events\/single-event.php",
       "oF" : 0
+    },
+    "\/tribe\/events\/v2\/list\/event.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/tribe\/events\/v2\/list\/event.php",
+      "oF" : 0
     }
   },
   "hooks" : [
