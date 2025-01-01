@@ -2460,6 +2460,24 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-
 html .eckb-kb-template .tax-epkb_post_type_1_category {
   padding-top: 100px;
 }
+html #eckb-categories-archive-container-v2 {
+  padding-top: 100px;
+  width: 1176px;
+}
+html #eckb-categories-archive-container-v2 #eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more {
+  color: #5c9bbf;
+  font-style: normal !important;
+}
+html #eckb-categories-archive-container-v2 #eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more .eckb-article-read-more-text {
+  font-style: normal;
+}
+html #eckb-article-page-container-v2 #eckb-article-body {
+  padding-bottom: 50px;
+}
+html #eckb-article-page-container-v2 #eckb-article-body #eckb-article-content-body h2 {
+  font-size: 45px;
+  padding-top: 20px;
+}
 
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
 .pswp {

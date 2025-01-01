@@ -2492,6 +2492,32 @@ html {
 	
 	
 	
+	#eckb-categories-archive-container-v2 {
+		padding-top: 100px;
+		width: 1176px;
+		#eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more {
+			color: $colour-link;
+			font-style:  normal!important;
+			.eckb-article-read-more-text {
+				font-style:  normal;
+			}
+			
+		}
+	}
+	
+	#eckb-article-page-container-v2 {
+		#eckb-article-body {
+			padding-bottom:50px;
+			#eckb-article-content-body {
+				h2 {
+					font-size: 45px;
+					padding-top: 20px;
+				}
+			}
+			
+		}
+	}
+	
 
 }	
 
