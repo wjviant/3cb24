@@ -38,8 +38,7 @@ function remove_unwanted_css() {
 	wp_deregister_style( 'classic-theme-styles' );
 	wp_dequeue_style( 'classic-theme-styles' );
 	wp_dequeue_style( 'tcb-roster' ); // Roster plugin styles are in main CSS file.
-	wp_dequeue_style( 'epkb-mp-frontend-category-layout-css' );
-	
+	wp_dequeue_style( 'epkb-mp-frontend-category-layout-css' ); // This doesn't work.
 }
 add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
 
@@ -151,19 +150,24 @@ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 
 
-// Events stuff
+// Events stuff.
+add_action(
+	'tribe_template_before_include:events/v2/components/events-bar',
+	function ( $file, $name, $template ) {
+		echo '<h1 id="eventListingTitle">Events</h1>';
+	},
+	10,
+	3
+);
 
-add_action( 'tribe_template_before_include:events/v2/components/events-bar', function( $file, $name, $template ) {
-  echo '<h1 id="eventListingTitle">Events</h1>';
-}, 10, 3 );
 
 
 
 
-
-
-// Add ACF options page.
-if( function_exists( 'acf_add_options_page' ) ) {
+/**
+ * Add ACF options page.
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page( 'Global Settings' );
 }
 
