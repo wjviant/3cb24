@@ -7,20 +7,17 @@
 
 get_header(); ?>
 <div class="container">
-	<div class="twelve columns">
-	<h1>News &amp; Blog</h1>
-	<?php if ( have_posts() ) { ?>
-	<div class="row">
-		<?php
+	<div class="eight columns">
+	<h1>Latest News</h1>
+	<?php if ( have_posts() ) { 
 		while ( have_posts() ) {
 			the_post();
 			?>
-		<div class="post" id="post-<?php the_ID(); ?>" >
-			<h3 class="blog-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+		<div class="post white shadow" id="post-<?php the_ID(); ?>" >
 			<?php
 			if ( has_post_thumbnail() ) {
 				?>
-			<div class="newsthumb">
+			<div class="news-thumb">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 					<img src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="<?php the_title(); ?>"> 
 				</a>
@@ -28,13 +25,14 @@ get_header(); ?>
 				<?php
 			}
 			?>
-			<div class="entry">
+			<div class="padded">
+				<h3 class="blog-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>  
 				<?php the_excerpt(); ?>
+				<p class="postmetadata clear">
+					<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span>
+					<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
+				</p>
 			</div>
-			<p class="postmetadata clear">
-				<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span>
-				<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
-			</p>
 		</div>
 			<?php
 		}
@@ -49,10 +47,9 @@ get_header(); ?>
 		?>
 		<h2 class="center">Not Found</h2>  
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
-		<?php get_search_form(); ?>
-		<?php
+		<?php get_search_form(); 
 	}
 	?>
-	</div>
+	<?php get_sidebar(); ?> 
 </div>
 <?php get_footer(); ?>

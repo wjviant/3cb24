@@ -4,7 +4,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.16
+Version: 1.17
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -1128,7 +1128,7 @@ body.mobilenavopen  {
 }
 
 .shadow {
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 
@@ -1607,17 +1607,31 @@ body.mobilenavopen  {
 
 /* Blog section */
 
+.archive,
+.blog {
+	padding-top: 100px;
+	.contentWrap {
+		background: #fafafa;
+		padding-top: 40px;
+	}
+	.post {
+		margin-bottom:40px;
+	}
+	.news-thumb {
+		img {
+			width:100%;
+		}
+	}
+}
+
 .single .post {
 	
 }
 
 .postmetadata {
-	background:#fafafa;
-	border:1px solid #eee;
+	border-top:1px solid #eee;
 	font-size:12px;
-	margin-bottom:40px;
-	padding:5px 10px;
-	
+	padding:5px;
 	span {
 		display:inline-block;
 	}
@@ -1659,17 +1673,27 @@ body.mobilenavopen  {
 #sidebar {
 	list-style:none;
 	margin:0;
-	padding:0;
+	padding:0 0 0 20px;
 	
 	#submit {
 		float:left;
 		margin-left:5px;
 	}
+	
+	#s {
+		border:1px solid #ccc;
+	}
+	
+	#searchsubmit {
+		background: $colour-button;
+		color: #fff;
+	}
 
 	> li {
-		background:#eee;
-		margin:0 0 20px 0;
-		padding:10px;
+		background:#fff;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		margin:0 0 40px 0;
+		padding:20px;
 	}
 
 	li li {

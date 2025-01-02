@@ -1,4 +1,4 @@
-<div class="three columns">
+<div class="four columns">
 	<ul id="sidebar">
 	<?php if ( !dynamic_sidebar('blog-sidebar') ) : ?>
 		<li id="about">
