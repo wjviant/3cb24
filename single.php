@@ -1,43 +1,55 @@
 <?php get_header(); ?>
+
+<div class="blogBanner banners">
+<?php
+	$page_for_posts = get_option( 'page_for_posts' );
+	echo get_the_post_thumbnail( $page_for_posts, 'large' );
+?>
+	<div class="inner">
+		<div class="container">
+			<div class="twelve columns centre">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</div>
+	</div>
+</div> 
+
 <div class="container">    
-    <div class="nine columns">
-    
-    	<?php if ( function_exists('yoast_breadcrumb') ) {
-		yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-		} ?>
-    
-    <?php if (have_posts()) : ?>  
+    <div class="eight columns">
+
+    <?php if ( have_posts() ) : ?>  
     
         <?php while (have_posts()) : the_post(); ?> 
          
-        <div class="post" id="post-<?php the_ID(); ?>">  
-        	
-        	<?php if ( has_post_thumbnail()) : ?>
-					<div class="newsthumb">
-						<img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>"> 
-					</div> 
-					<?php endif; ?>
-        	
-          <h1 class="blog-title"><?php the_title(); ?></h1>  
-					
-					<p class="postmetadata clear">
-            <span class="blogcat">Posted in <?php the_category(', ') ?></span><span class="blogdate">   
-            <?php the_time('F jS, Y') ?> </span>    
-          </p>
-					
-          <div class="entry">   
-          	<?php the_content(); ?>  
-          </div>  
+        <div class="post white" id="post-<?php the_ID(); ?>">
+			
+			<!--<div class="padded">
+				<?php if( function_exists( "seopress_display_breadcrumbs" ) ) {
+					seopress_display_breadcrumbs();
+				} ?>
+			</div>-->
+			<?php if ( has_post_thumbnail() ) { ?>
+			<div class="news-thumb">
+				<img src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="<?php the_title(); ?>">
+			</div>
+			<?php } ?>
+        	<div class="entry padded">
+				<?php the_content(); ?>
+				<p class="postmetadata clear">
+            		<span class="blogcat">Posted in <?php the_category(', ') ?></span><span class="blogdate">
+            		<?php the_time('F jS, Y') ?> </span>
+          		</p>
+          </div>
     
-        </div>  
+        </div>
         
-        <?php comments_template(); ?> 
+        <?php comments_template(); ?>
         
-        <?php endwhile; ?>        
-    <?php endif; ?> 
-    
-    </div>
-    
-    <?php get_sidebar(); ?> 
-</div>    
+        <?php endwhile; ?>
+    <?php endif; ?>
+
+	</div>
+
+	<?php get_sidebar(); ?> 
+</div>
 <?php get_footer(); ?> 

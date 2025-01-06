@@ -19,7 +19,15 @@
 <body <?php body_class(); ?>>
 	<?php acf_form_head(); ?>
 	<div class="wrap">	
-		<header id="header" <?php echo ( get_field( 'dark_header' ) ) ? 'class="darkHeader"' : ''; ?>>
+		<header id="header" 
+			<?php //echo ( get_field( 'dark_header' ) ) ? 'class="darkHeader"' : ''; ?>
+			<?php 
+			//if ( is_home() ) { 
+				//$page_for_posts = get_option( 'page_for_posts' );
+				//echo ( get_field( 'dark_header', $page_for_posts ) ) ? 'class="darkHeader"' : '';
+			//}
+			?>
+			>
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span>Menu</span></button></div>
 				<div id="headerContactMobile"><a href="<?php echo esc_url( home_url() ); ?>/contact-us/" class="">Contact</a></div>

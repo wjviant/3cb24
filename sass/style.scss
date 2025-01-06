@@ -4,12 +4,12 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.17
+Version: 1.18
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Text Domain: 3cb24
+Text Domain: tcb24
 
 GitHub Theme URI: byintention/3cb24
 Primary Branch: main
@@ -176,13 +176,16 @@ a, a:visited {
 	color: $colour-link;
 	font-weight: bold;
 	text-decoration: underline;
-	outline: 0;
 	transition:all 0.2s linear;
 }
 
 a:hover, a:focus { 
 	color: $colour-link-hover;
 	transition:all 0.2s linear;
+}
+
+a:focus-visible {
+	outline-color: $colour-text; 
 }
 
 a:active {
@@ -544,7 +547,6 @@ select {
 	font-size: $base-font-size*.75;
 	line-height:1.2;
 	margin: 0;
-	outline: none;
 	padding: 15px ;
 	max-width: 100%;
 	width: 100%;
@@ -594,8 +596,7 @@ select {
 	font-size: $base-font-size*.75;
 	font-weight: 400;
 	line-height:1.2;
-	outline: 0;
-	padding: 11px 11px 11px 12px;
+	padding: 13px 10px 13px 11px;
 	position: absolute;
 		left: 0;
 		top: 50%;
@@ -803,7 +804,22 @@ body.mobilenavopen  {
 			fill:#222;
 		}
 	}
-	&.darkHeader {
+	
+	&.scrollHeader {
+		background:rgba(255,255,255,.95);
+		box-shadow:0 0 20px rgba(0,0,0,0.1);
+		color:#222;
+		transition: all 0.1s ease-in-out;
+		svg {
+			path {
+				fill:#222;
+			}
+		}
+	}
+}
+
+.darkHeader {
+	#header {
 		color:#fff;
 		svg {
 			path {
@@ -833,17 +849,6 @@ body.mobilenavopen  {
 					}
 				}
 				
-			}
-		}
-	}
-	&.scrollHeader {
-		background:rgba(255,255,255,.95);
-		box-shadow:0 0 20px rgba(0,0,0,0.1);
-		color:#222;
-		transition: all 0.1s ease-in-out;
-		svg {
-			path {
-				fill:#222;
 			}
 		}
 	}
@@ -976,7 +981,7 @@ body.mobilenavopen  {
 .page-id-242 #headerLogo svg path,
 .eckb-front-end-body #headerLogo svg path,
 .single-tribe_events #headerLogo svg path {
-	fill:#222;
+	
 }
 
 
@@ -1607,12 +1612,43 @@ body.mobilenavopen  {
 
 /* Blog section */
 
+.blogBanner {
+	height: 400px;
+	margin-bottom: 40px;
+	overflow: hidden;
+	.banners {
+		.container {
+			max-width: 1200px;
+		}
+	}
+	img {
+		display: block;
+		height:100%;
+		max-width: 9999px;
+		object-fit: cover;
+		object-position: top center;	
+		width:100%;
+	}
+	.inner {
+		top: 60%;
+	}
+}
+
+	@media only screen and (min-width: 830px) {
+		.single {
+			.banners {
+				.container {
+					max-width: 1200px;
+				}
+			}
+		}
+	}
+
 .archive,
 .blog {
-	padding-top: 100px;
+	
 	.contentWrap {
-		background: #fafafa;
-		padding-top: 40px;
+		background: $pageBg;
 	}
 	.post {
 		margin-bottom:40px;
@@ -1624,8 +1660,20 @@ body.mobilenavopen  {
 	}
 }
 
-.single .post {
+.single {
+	background: $pageBg;
+	.contentWrap {
+		background: transparent;
+	}
+	.post {
+		margin-bottom:40px;
+		.news-thumb {
+			img {
+				width:100%;
+			}
+		}
 	
+	}
 }
 
 .postmetadata {
@@ -1668,13 +1716,92 @@ body.mobilenavopen  {
 	}
 }
 
+
+#comment-list {
+	margin-top:40px;
+}
+
+#comments {
+	margin:0 0 40px 0;
+	h3 {
+		margin-bottom: 40px;
+	}
+	ol {
+		border-bottom:1px solid #ccc;
+		list-style:none;
+		margin:0 0 30px 0;
+		article {
+			margin-bottom:40px;
+		}
+		li {
+			.children {
+				margin-left:64px;
+			}
+		}
+	}
+	.comment-body {
+		display: flex;
+			align-items: flex-start;
+		padding-bottom:30px;
+	}
+	.comment-author {
+		box-sizing: border-box;
+		flex: 0 0 64px;
+		padding-right:20px;
+		img {
+			border-radius: 100px;
+		}
+	}
+	.comment-content {
+		.comment-meta {
+			display:block;
+		}
+		cite {
+			font-style: normal;
+		}
+		.fn {
+			font-weight: $bold;
+		}
+		.says {
+			display:none;
+		}
+		.comment-meta { 
+			line-height: 1;
+			margin-bottom:16px;
+			a {
+				color: #999;
+				font-size:.75rem;
+				font-weight: 400;
+				text-decoration: none;
+			}
+		}
+		
+		.reply {
+		}
+		
+	}
+	#respond {
+		small {
+			display:block;
+			font-size: 80%;
+			margin-top:20px;
+		}
+		#cancel-comment-reply-link {
+			color: #c00;
+		}	
+		.required-field-message {
+			display: block;
+			padding-top:15px;
+		}
+	}
+}
+
 /* Sidebar section */
 
 #sidebar {
 	list-style:none;
-	margin:0;
-	padding:0 0 0 20px;
-	
+	margin:0 ;
+	padding:0 0 40px 0;
 	#submit {
 		float:left;
 		margin-left:5px;
@@ -1691,7 +1818,6 @@ body.mobilenavopen  {
 
 	> li {
 		background:#fff;
-		box-shadow: 0 0 10px rgba(0,0,0,0.1);
 		margin:0 0 40px 0;
 		padding:20px;
 	}
@@ -1761,6 +1887,16 @@ body.mobilenavopen  {
 	}
 	
 }
+
+	@media only screen and (min-width: 600px) {
+			
+		#sidebar {
+			padding:0 0 40px 20px;
+		}
+		
+	}
+	
+	
 
 /* Contact */
 
@@ -1860,7 +1996,7 @@ body.mobilenavopen  {
 						font-weight: $regular;
 						height: 50px;
 						line-height: 40px;
-						margin: 0 20px;
+						padding: 0 20px;
 						text-decoration:none;
 						text-transform: uppercase;
 					}
@@ -1870,7 +2006,7 @@ body.mobilenavopen  {
 					}	
 					
 					&:last-child a {
-						margin-right:0;
+						padding-right:0;
 					}
 					
 					a.sub_nav {
@@ -1881,7 +2017,7 @@ body.mobilenavopen  {
 						position:relative;
 						z-index:400;
 						> a {
-							margin-right:40px;
+							padding-right:35px;
 						}
 						> a:after {
 							background-image: url(images/icon-chev-down-grey.svg);
@@ -1893,7 +2029,7 @@ body.mobilenavopen  {
 							height:15px;
 							opacity:1;
 							position: absolute;
-								right: 18px;
+								right: 12px;
 								top: 11px;
 							transition: all 0.5s linear;
 							vertical-align: middle;
@@ -1953,6 +2089,10 @@ body.mobilenavopen  {
 							width: 20px;
 						}
 					}
+					
+					// TODO - focus doesn't open subnav 
+					
+					&.menu-item-has-children > a:focus,
 					&.menu-item-has-children:hover {
 						.sub-menu {
 							max-height: 9999px;
@@ -2020,9 +2160,13 @@ html .wcpt-product-form select {
 
 html {
 	
+	.post-type-archive-tribe_events {
+		padding-top:95px;
+	}
+	
 	// Single event
 	.single-tribe_events {
-		padding-top:100px;
+		padding-top:95px;
 		
 		.contentWrap {
 			background: #fafafa;
@@ -2082,8 +2226,7 @@ html {
 	
 
 	.tribe-events-view--list {
-		margin-top: 100px;
-		background: #fafafa;
+		background: $pageBg;
 		padding-top: 0;
 		
 		#eventListingTitle {
@@ -2094,7 +2237,7 @@ html {
 		
 		.tribe-events-l-container {
 			max-width:800px;
-			padding-top: 50px !important;
+			padding-top: 40px !important;
 		}
 		
 		.tribe-events-header {
@@ -2358,11 +2501,9 @@ input[type="submit"].slotIcon {
 html {
 	
 	.eckb-kb-template {
-		padding-top:100px;
-	
+		
 		#epkb-main-page-container.epkb-css-full-reset,
 		#eckb-article-page-container-v2 {
-			
 			
 			#eckb-article-body {
 				h1 {
@@ -2375,11 +2516,14 @@ html {
 			}
 			
 			.epkb-doc-search-container {
-				background: #fafafa;
+				background: #222;
 				margin-bottom: 30px!important;
 				padding: 50px 0 60px 0;
+				padding-top:135px;
 				
+				div.epkb-doc-search-container__title,
 				h1.epkb-doc-search-container__title {
+					color:#fff;
 					font-weight: bold!important;
 				}
 				#epkb_search_form {
@@ -2405,11 +2549,7 @@ html {
 			}
 			
 			.epkb-full {
-				background: #fafafa;
-				
-				
-				
-				
+				background: $pageBg;
 					
 				#epkb-content-container {
 					background: transparent;
@@ -2427,14 +2567,13 @@ html {
 					.epkb-section-container {
 						
 						.eckb-categories-list {
-							background: #fafafa;
+							background: $pageBg;
 							display: flex!important;
 								flex-wrap: wrap;
 								justify-content: center;
 							padding-bottom: 50px!important;
 							section {
-								background: #fff;
-								box-shadow: 0 0 10px rgba(0,0,0,0.1);
+								background: #fff;;
 								box-sizing: border-box;
 								flex: 0 0 31.333%!important;
 								font-size: 16px!important;
@@ -2504,7 +2643,7 @@ html {
 		}
 		
 		.tax-epkb_post_type_1_category {
-			padding-top:100px;
+			padding-top:95px;
 		}
 		
 		
@@ -2517,7 +2656,7 @@ html {
 	
 	
 	#eckb-categories-archive-container-v2 {
-		padding-top: 100px;
+		padding-top: 95px;
 		width: 1176px;
 		#eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more {
 			color: $colour-link;

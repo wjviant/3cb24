@@ -6,14 +6,29 @@
  */
 
 get_header(); ?>
+<?php if ( is_home() ) { ?>
+	<div class="blogBanner banners">
+	<?php
+		$page_for_posts = get_option( 'page_for_posts' );
+		echo get_the_post_thumbnail( $page_for_posts, 'large' );
+	?>
+		<div class="inner">
+			<div class="container">
+				<div class="twelve columns centre">
+					<h1><?php echo esc_html( get_the_title( $page_for_posts ) ); ?></h1>
+				</div>
+			</div>
+		</div>
+	</div> 
+<?php } ?>
 <div class="container">
 	<div class="eight columns">
-	<h1>Latest News</h1>
-	<?php if ( have_posts() ) { 
+	<?php
+	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
 			?>
-		<div class="post white shadow" id="post-<?php the_ID(); ?>" >
+		<div class="post white" id="post-<?php the_ID(); ?>" >
 			<?php
 			if ( has_post_thumbnail() ) {
 				?>
@@ -26,7 +41,7 @@ get_header(); ?>
 			}
 			?>
 			<div class="padded">
-				<h3 class="blog-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>  
+				<h3 class="blog-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>  
 				<?php the_excerpt(); ?>
 				<p class="postmetadata clear">
 					<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span>
@@ -47,7 +62,8 @@ get_header(); ?>
 		?>
 		<h2 class="center">Not Found</h2>  
 		<p class="center">Sorry, but you are looking for something that isn't here.</p>
-		<?php get_search_form(); 
+		<?php
+		get_search_form();
 	}
 	?>
 	<?php get_sidebar(); ?> 

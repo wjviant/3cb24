@@ -775,6 +775,14 @@
       "oAP" : "\/template-testpage.php",
       "oF" : 0
     },
+    "\/template-wiki.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-wiki.php",
+      "oF" : 0
+    },
     "\/tribe-events\/single-event.php" : {
       "cB" : 0,
       "ft" : 8192,
