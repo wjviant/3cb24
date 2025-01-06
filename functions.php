@@ -50,9 +50,14 @@ function tcb24_custom_body_classes( $classes ) {
 		$classes[] = 'darkHeader';
 	}
 	// If we're in a single news post.
-	if ( is_single() ) {
+	if ( is_singular( 'post' ) ) {
 		$classes[] = 'darkHeader';
 	}
+	// If we're in a single wiki post.
+	if ( is_singular( 'epkb_post_type_1' ) ) {
+		$classes[] = 'darkHeader';
+	}
+	
 	return $classes;
 }
 
