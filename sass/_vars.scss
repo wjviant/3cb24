@@ -44,9 +44,11 @@ $colour-text: #222;
 
 $pageBg: #eee;
 
-$colour-link: #5c9bbf;
+//$colour-link: #5c9bbf;
+$colour-link: #2271b1;
+
 $colour-link-hover: color.adjust($colour-link, $lightness: 10%);
 
 
-$colour-button: #5c9bbf;
+$colour-button: #2271b1;
 $colour-button-hover: color.adjust($colour-button, $lightness: 10%);

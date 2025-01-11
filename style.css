@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.19
+Version: 1.20
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -376,14 +376,14 @@ hr {
 
 /* #Links */
 a, a:visited {
-  color: #5c9bbf;
+  color: #2271b1;
   font-weight: bold;
   text-decoration: underline;
   transition: all 0.2s linear;
 }
 
 a:hover, a:focus {
-  color: rgb(128.6211453744, 177.4669603524, 205.3788546256);
+  color: rgb(46.9620853081, 139.8151658768, 215.0379146919);
   transition: all 0.2s linear;
 }
 
@@ -431,7 +431,7 @@ dd {
 
 /* #Notification Styles */
 .info {
-  background: #5c9bbf;
+  background: #2271b1;
   color: #fff;
   font-weight: bold;
   padding: 5px 10px;
@@ -669,9 +669,9 @@ input[type=submit],
 input[type=reset],
 input[type=button] {
   background-color: transparent;
-  border: 2px solid #5c9bbf;
+  border: 2px solid #2271b1;
   border-radius: 0;
-  color: #5c9bbf;
+  color: #2271b1;
   cursor: pointer;
   display: inline-block;
   font-family: "D-DIN", arial, sans-serif;
@@ -689,7 +689,7 @@ input[type=button] {
 input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover {
-  background-color: #5c9bbf;
+  background-color: #2271b1;
   color: #fff;
   transition: all 0.2s linear;
 }
@@ -1069,7 +1069,7 @@ body.mobilenavopen {
   color: #fff;
 }
 .darkHeader #header #nav2 a:hover {
-  color: #5c9bbf;
+  color: #2271b1;
 }
 .darkHeader #header #nav2 .menu-item-has-children > a:after {
   background-image: url(images/icon-chev-down-white.svg);
@@ -1078,7 +1078,7 @@ body.mobilenavopen {
   color: #fff;
 }
 .darkHeader #header #nav2 .menu-item-has-children .sub-menu a:hover {
-  color: #5c9bbf;
+  color: #2271b1;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1098,7 +1098,7 @@ body.mobilenavopen {
     fill: #222;
   }
   #header.scrollHeader #nav2 a {
-    color: #5c9bbf;
+    color: #2271b1;
   }
   #header.scrollHeader #nav2 a:hover {
     color: #222;
@@ -1110,7 +1110,7 @@ body.mobilenavopen {
     color: #fff;
   }
   #header.scrollHeader #nav2 .sub-menu a:hover {
-    color: #5c9bbf;
+    color: #2271b1;
   }
   #header.scrollHeader #headerLogin {
     color: #222;
@@ -1214,7 +1214,7 @@ body.mobilenavopen {
   width: 29px;
 }
 #headerMenuMobile button span {
-  background: #5c9bbf;
+  background: #2271b1;
   display: block;
   height: 5px;
   position: absolute;
@@ -1224,7 +1224,7 @@ body.mobilenavopen {
   width: 29px;
 }
 #headerMenuMobile button:before {
-  background: #5c9bbf;
+  background: #2271b1;
   content: "";
   height: 5px;
   position: absolute;
@@ -1234,7 +1234,7 @@ body.mobilenavopen {
   width: 29px;
 }
 #headerMenuMobile button:after {
-  background: #5c9bbf;
+  background: #2271b1;
   content: "";
   height: 5px;
   position: absolute;
@@ -1300,7 +1300,7 @@ body.mobilenavopen {
 }
 
 .blue {
-  background-color: #5c9bbf;
+  background-color: #2271b1;
 }
 
 .grey {
@@ -1891,7 +1891,7 @@ body.mobilenavopen {
   border: 1px solid #ccc;
 }
 #sidebar #searchsubmit {
-  background: #5c9bbf;
+  background: #2271b1;
   color: #fff;
 }
 #sidebar > li {
@@ -2041,7 +2041,7 @@ body.mobilenavopen {
     position: relative;
   }
   #nav2 ul li a {
-    color: #5c9bbf;
+    color: #2271b1;
     display: block;
     font-size: 20px;
     font-weight: 400;
@@ -2115,7 +2115,7 @@ body.mobilenavopen {
     width: 220px;
   }
   #nav2 ul li .sub-menu li a:hover {
-    color: #5c9bbf;
+    color: #2271b1;
   }
   #nav2 ul li .sub-menu li:first-child {
     margin-top: 10px;
@@ -2254,7 +2254,7 @@ html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar
   text-align: center;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-date-tag {
-  background: #5c9bbf;
+  background: #2271b1;
   color: #fff;
   padding: 20px;
 }
@@ -2265,7 +2265,7 @@ html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar
   padding-right: 0;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper h3 a {
-  color: #5c9bbf;
+  color: #2271b1;
 }
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper h3 a:hover {
   color: #222;
@@ -2316,7 +2316,7 @@ html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-cal
 html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-calendar-latest-past__event-date-tag,
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-events-calendar-list__event-date-tag,
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-events-calendar-latest-past__event-date-tag {
-  background: #5c9bbf;
+  background: #2271b1;
   color: #fff;
   font-weight: 700;
   padding: 20px;
@@ -2485,8 +2485,8 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-containe
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container #epkb_search_form #epkb-search-kb,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container #epkb_search_form #epkb-search-kb {
-  background: #5c9bbf;
-  border: #5c9bbf;
+  background: #2271b1;
+  border: #2271b1;
   border-radius: 0 !important;
   font-family: "D-DIN", arial, sans-serif;
   text-shadow: none;
@@ -2507,7 +2507,7 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container a,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container a {
-  color: #5c9bbf;
+  color: #2271b1;
   text-decoration: none;
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container a:hover,
@@ -2539,7 +2539,7 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text {
-  color: #5c9bbf;
+  color: #2271b1;
   font-size: 16px;
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .eckb-article-title__text:hover,
@@ -2548,7 +2548,7 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text {
-  color: #5c9bbf;
+  color: #2271b1;
   font-size: 16px;
   font-weight: bold;
   margin-right: 5px;
@@ -2556,7 +2556,7 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a {
-  color: #5c9bbf;
+  color: #2271b1;
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a:hover,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-full #epkb-content-container .epkb-section-container .eckb-categories-list section .epkb-category-level-2-3__cat-name_text a:hover {
@@ -2591,7 +2591,7 @@ html #eckb-categories-archive-container-v2 {
   width: 1176px;
 }
 html #eckb-categories-archive-container-v2 #eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more {
-  color: #5c9bbf;
+  color: #2271b1;
   font-style: normal !important;
 }
 html #eckb-categories-archive-container-v2 #eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more .eckb-article-read-more-text {
