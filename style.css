@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.21
+Version: 1.22
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -1287,6 +1287,13 @@ body.mobilenavopen {
 }
 /* Homepage */
 /* Flexible content */
+.page-template-default #content {
+  padding: 155px 0 100px 0;
+}
+.page-template-default #content .container {
+  max-width: 900px;
+}
+
 .transparent {
   background-color: transparent;
 }
@@ -2079,13 +2086,13 @@ body.mobilenavopen {
     position: absolute;
     right: 12px;
     top: 11px;
-    transition: all 0.5s linear;
+    transition: all 0.2s linear;
     vertical-align: middle;
     width: 15px;
   }
   #nav2 ul li.menu-item-has-children:hover > a:after {
     opacity: 0;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
   }
   #nav2 ul li .sub-menu {
     background: #222;
@@ -2099,7 +2106,7 @@ body.mobilenavopen {
     position: absolute;
     top: 50px;
     left: 0;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
     z-index: 9999;
   }
   #nav2 ul li .sub-menu li {
@@ -2110,7 +2117,7 @@ body.mobilenavopen {
     color: #fff;
     height: 50px;
     line-height: 50px;
-    margin: 0 20px;
+    margin: 0;
     overflow: hidden;
     width: 220px;
   }
@@ -2140,7 +2147,7 @@ body.mobilenavopen {
     overflow: visible;
     padding: 0;
     pointer-events: all;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
   }
 }
 .wpcf7-acceptance {
@@ -2253,14 +2260,6 @@ html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar
   font-size: 20px;
   text-align: center;
 }
-html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-date-tag {
-  background: #2271b1;
-  color: #fff;
-  padding: 20px;
-}
-html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-date-tag time {
-  padding: 0;
-}
 html .tribe-events-view--list .tribe-events-calendar-list .tribe-events-calendar-list__event-wrapper {
   padding-right: 0;
 }
@@ -2316,7 +2315,7 @@ html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-cal
 html .tribe-common-g-row.tribe-events-calendar-list__event-row .tribe-events-calendar-latest-past__event-date-tag,
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-events-calendar-list__event-date-tag,
 html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-events-calendar-latest-past__event-date-tag {
-  background: #2271b1;
+  background: #222;
   color: #fff;
   font-weight: 700;
   padding: 20px;
@@ -2342,7 +2341,6 @@ html .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest
 */
 #attendanceRoster {
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   padding: 30px;
   transition: all 0.2s linear;
@@ -2405,7 +2403,6 @@ html .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest
 */
 #slotTool {
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   padding: 30px;
 }
@@ -2442,8 +2439,16 @@ input[type=submit].slotIcon.disabled {
   padding: 30px;
   text-align: center;
 }
-#slotToolButtons br {
-  display: none;
+#slotToolButtons a {
+  margin: 0 10px;
+}
+
+.tribe-events-sub-nav {
+  list-style: none;
+}
+
+.tribe-events-single .tribe-events-sub-nav a span {
+  display: inline-block;
 }
 
 .unit {
@@ -2465,8 +2470,7 @@ html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-s
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container {
   background: #222;
   margin-bottom: 30px !important;
-  padding: 50px 0 60px 0;
-  padding-top: 135px;
+  padding: 145px 0 70px 0;
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container div.epkb-doc-search-container__title,
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container h1.epkb-doc-search-container__title,
@@ -2477,7 +2481,7 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-containe
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container #epkb_search_form #epkb_search_terms,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container #epkb_search_form #epkb_search_terms {
-  border: 2px solid #ccc;
+  border: 2px solid #fff;
   border-right: 0;
   border-radius: 0 !important;
   font-family: "D-DIN", arial, sans-serif;
@@ -2490,6 +2494,13 @@ html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-containe
   border-radius: 0 !important;
   font-family: "D-DIN", arial, sans-serif;
   text-shadow: none;
+  transition: all 0.2s linear;
+}
+html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container #epkb_search_form #epkb-search-kb:hover,
+html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container #epkb_search_form #epkb-search-kb:hover {
+  background: rgb(46.9620853081, 139.8151658768, 215.0379146919);
+  border: rgb(46.9620853081, 139.8151658768, 215.0379146919);
+  transition: all 0.2s linear;
 }
 html .eckb-kb-template #epkb-main-page-container.epkb-css-full-reset .epkb-doc-search-container .epkb-doc-search-container__title,
 html .eckb-kb-template #eckb-article-page-container-v2 .epkb-doc-search-container .epkb-doc-search-container__title {

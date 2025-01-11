@@ -8,13 +8,15 @@
 acf_form_head(); 
 get_header(); ?>
 	<div id="content">
-		<div class="container">
+		<div class="container textPage">
 			<div class="twelve columns">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post();
+					
 					the_content();
+										
 				}
 			}
 			?>
