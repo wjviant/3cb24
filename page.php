@@ -5,6 +5,7 @@
  * @package 3cb24
  */
 
+acf_form_head(); 
 get_header(); ?>
 	<div id="content">
 		<div class="container">
