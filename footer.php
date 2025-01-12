@@ -48,9 +48,6 @@
 			jQuery('.epkb-category-level-2-3__cat-name_text a').removeAttr('style');
 			jQuery('.epkb-sub-category li').removeAttr('style');
 			jQuery('.epkb-section-body').removeAttr('style');
-			
-			
-			
 		});
 	</script>
 	

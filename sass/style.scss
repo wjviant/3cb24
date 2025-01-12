@@ -4,7 +4,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.24
+Version: 1.25
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2188,17 +2188,61 @@ html {
 			background: #fafafa;
 		}
 		
+		.event-banner {
+			background: #222;
+			color:#fff;
+			margin-bottom: 40px;
+			min-height: 400px;
+			position: relative;
+			h1,h2,h3 {
+				color:#fff;
+			}
+			h3 {
+				text-align: center;
+				width:100%;
+			}
+			.tint {
+				background: rgba(0,0,0,0.5);
+				display: block;
+				height: 100%;
+				position: absolute;
+					top:0;
+					left:0;
+				width: 100%;
+				z-index: 200;
+			}
+			.tribe-events-event-image {
+				margin:0;
+				position: relative;
+				z-index: 100;
+			}
+			.inner {
+				position: absolute;
+					top:60%;
+					left:0;
+				transform: translateY(-50%);
+				width:100%;	
+				z-index: 300;
+			}
+			.event-container {
+				max-width:1200px;
+			}
+			
+		}
+		
+		.event-container {
+			max-width: 1000px;
+			margin:0 auto;
+		}
+		
 		.tribe-events-back {
 			display: none;
 		}
 		
 		#tribe-events-pg-template {
-			max-width:1000px;
-			padding-top:135px;
-			
-			.tribe-events-schedule h2 {
-				font-size:20px;
-			}
+			max-width:3000px;
+			padding:0;
+			//padding-top:135px;
 			
 			.tribe-events-notices {
 				ul {
@@ -2222,10 +2266,6 @@ html {
 				text-align: center;
 			}
 			
-			.tribe-events-schedule h2 {
-				text-align: center;
-				width: 100%;
-			}
 		}
 
 		.tcb_briefing {
@@ -2267,24 +2307,40 @@ html {
 			
 			.tribe-events-calendar-list__month-separator-text {
 				flex: 0 0 100%;
-				font-size: 20px;	
+				font-size: 30px;	
 				text-align: center;
 			}
 			
 			.tribe-events-calendar-list__event-wrapper {
+				color:#fff;
 				padding-right: 0;
+				position: relative;
+				text-align: center;
 				h3 a {
-					color: $colour-link;
+					color: #fff;
 					&:hover {
-						color: $colour-text;
+						color: $colour-link;
 					}
 				}
 				.tribe-events-calendar-list__event {
 					
 					.tribe-events-calendar-list__event-featured-image-wrapper {
-						margin-bottom: 20px;
-						padding-right: 0;
+						margin:0;
+						padding:0;
+						img {
+							width: 100%;
+						}
 					}
+				}
+				.tribe-events-calendar-list__event-details {
+					background: rgba(0,0,0,0.5);
+					padding: 20px;
+					position: absolute;
+						top:50%;
+						left:10%;
+					transform: translateY(-50%);
+					width: 80%;
+					
 				}
 			}
 		}
@@ -2320,6 +2376,7 @@ html {
 					width: 100%;
 				}
 				.tribe-events-calendar-latest-past__event-details.tribe-common-g-col {
+					margin:0;
 					margin-bottom:20px;
 				}
 			}
@@ -2346,11 +2403,11 @@ html {
 		}
 	}
 	
-	.tribe-events-calendar-list__event-featured-image-wrapper ,
-	.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest-past__event-featured-image-wrapper {
-		margin-bottom:20px;
-		padding-right:0;
-	}
+	//.tribe-events-calendar-list__event-featured-image-wrapper ,
+	//.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-latest-past__event-featured-image-wrapper {
+	//	margin-bottom:20px;
+	//	padding-right:0;
+	//}
 }
 
 
