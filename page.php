@@ -5,7 +5,7 @@
  * @package 3cb24
  */
 
-acf_form_head(); 
+acf_form_head();
 get_header(); ?>
 	<div id="content">
 		<div class="container textPage">
@@ -14,13 +14,11 @@ get_header(); ?>
 			if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post();
-					
 					the_content();
-										
 				}
 			}
 			?>
 			</div>
 		</div>
-	</div>	
+	</div>
 <?php get_footer(); ?>

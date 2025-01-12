@@ -57,7 +57,14 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_singular( 'epkb_post_type_1' ) ) {
 		$classes[] = 'darkHeader';
 	}
-	
+	// If we're in search results page.
+	if ( is_search() ) {
+		$classes[] = 'darkHeader';
+	}
+	// If we're in 404  page.
+	if ( is_404() ) {
+		$classes[] = 'darkHeader';
+	}
 	return $classes;
 }
 
@@ -109,52 +116,66 @@ function tcb24_comment( $comment, $args, $depth ) {
 		$tag       = 'li';
 		$add_below = 'div-comment';
 	}?>
-	<<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID() ?>"><?php 
-	if ( 'div' != $args['style'] ) { ?>
-		<div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php
-	} ?>
-			<div class="comment-author vcard"><?php 
-				if ( $args['avatar_size'] != 0 ) {
-					echo get_avatar( $comment, $args['avatar_size'] ); 
-				} 
-				 ?>
+	<<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
+	<?php
+	if ( 'div' !== $args['style'] ) {
+		?>
+		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<?php
+	}
+	?>
+			<div class="comment-author vcard">
+		<?php
+		if ( 0 !== $args['avatar_size'] ) {
+			echo get_avatar( $comment, $args['avatar_size'] );
+		}
+		?>
 			</div>
 			<div class="comment-content">
-				<?php 
-				printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() );
-				if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/><?php 
-				} ?>
+				<?php
+				printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ),get_comment_author_link() );
+				if ( '0' === $comment->comment_approved ) {
+					?>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/>
+				<?php
+				}
+				?>
 				<div class="comment-meta commentmetadata">
-					<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
+					<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+					<?php
 						/* translators: 1: date, 2: time */
-						printf( 
-							__('%1$s at %2$s'), 
-							get_comment_date(),  
-							get_comment_time() 
-						); ?>
-					</a><?php 
-					edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+						printf(
+							__( '%1$s at %2$s' ),
+							get_comment_date(),
+							get_comment_time(),
+						);
+					?>
+					</a>
+					<?php
+					edit_comment_link( __( '(Edit)' ), '  ', '' );
+					?>
 				</div>
-				
-					<?php comment_text(); ?>
-				
-				<div class="reply"><?php 
-						comment_reply_link( 
-							array_merge( 
-								$args, 
-								array( 
-									'add_below' => $add_below, 
-									'depth'     => $depth, 
-									'max_depth' => $args['max_depth'] 
-								) 
-							) 
-						); ?>
+				<?php comment_text(); ?>
+				<div class="reply">
+				<?php
+					comment_reply_link(
+						array_merge(
+							$args,
+							array(
+								'add_below' => $add_below,
+								'depth'     => $depth,
+								'max_depth' => $args['max_depth'],
+							)
+						)
+					);
+				?>
 				</div>
 			</div>
-				<?php 
-	if ( 'div' != $args['style'] ) : ?>
-		</div><?php 
+			<?php
+			if ( 'div' !== $args['style'] ) :
+				?>
+		</div>
+				<?php
 	endif;
 }
 
