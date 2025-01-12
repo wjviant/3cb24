@@ -4,7 +4,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.22
+Version: 1.23
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2099,7 +2099,7 @@ body.mobilenavopen  {
 					
 					// TODO - focus doesn't open subnav 
 					
-					&.menu-item-has-children > a:focus,
+					&.menu-item-has-children:focus,
 					&.menu-item-has-children:hover {
 						.sub-menu {
 							max-height: 9999px;
@@ -2115,8 +2115,6 @@ body.mobilenavopen  {
 			}
 		}
 	}
-
-
 
 
 .wpcf7-acceptance {
@@ -2174,7 +2172,6 @@ html {
 	// Single event
 	.single-tribe_events {
 		
-		
 		.contentWrap {
 			background: #fafafa;
 		}
@@ -2184,7 +2181,7 @@ html {
 		}
 		
 		#tribe-events-pg-template {
-			max-width:800px;
+			max-width:1000px;
 			padding-top:135px;
 			
 			.tribe-events-schedule h2 {
@@ -2217,8 +2214,6 @@ html {
 				text-align: center;
 				width: 100%;
 			}
-			
-			
 		}
 
 		.tcb_briefing {
@@ -2230,11 +2225,7 @@ html {
 				padding-top:30px;
 			}
 		}
-		
-		
-		
 	}
-	
 
 	.tribe-events-view--list {
 		background: $pageBg;
@@ -2247,19 +2238,17 @@ html {
 		}
 		
 		.tribe-events-l-container {
-			max-width:800px;
+			max-width: 1000px;
 			padding-top: 40px !important;
 		}
 		
 		.tribe-events-header {
-			
 			.tribe-events-c-top-bar {
 				display:none;
 			}
 			.tribe-events-c-events-bar {
 				display:none;
-			}
-			
+			}	
 		}
 		
 		.tribe-events-calendar-list {
@@ -2284,33 +2273,30 @@ html {
 						margin-bottom: 20px;
 						padding-right: 0;
 					}
-					
 				}
 			}
-			
-			
 		}
-		
+
 		.tribe-events-c-subscribe-dropdown__container {
 			display:none;
 		}
-		
+	
 		.tribe-events-single-event-title {
 			font-size:inherit;
 			font-family: inherit;
 		}
 	}
-	
+
 	.tribe-events-event-meta {
 		display: none;
 	}
-	
+
 	.tribe-events-calendar-latest-past__event-date-tag-datetime {
 		font-weight: $bold;
 		margin: 0;
 		padding: 10px;
 	}
-	
+
 	.tribe-events-calendar-list,
 	.tribe-events-calendar-latest-past {
 		article {
@@ -2326,8 +2312,8 @@ html {
 				}
 			}
 		}
-		
 	}
+	
 	.tribe-common-g-row.tribe-events-calendar-list__event-row,
 	.tribe-common-g-row.tribe-events-calendar-latest-past__event-row {
 		align-items: flex-start;
@@ -2353,9 +2339,7 @@ html {
 		margin-bottom:20px;
 		padding-right:0;
 	}
-	
 }
-
 
 
 
@@ -2640,27 +2624,13 @@ html {
 				
 				
 			}
-			
-			
-			
-			
-			
-			
-			
 		}
 		
 		.tax-epkb_post_type_1_category {
 			padding-top:95px;
 		}
-		
-		
-		
-		
-		
-		
+
 	}
-	
-	
 	
 	#eckb-categories-archive-container-v2 {
 		padding-top: 95px;
@@ -2671,7 +2641,7 @@ html {
 			.eckb-article-read-more-text {
 				font-style:  normal;
 			}
-			
+
 		}
 	}
 	
@@ -2687,9 +2657,7 @@ html {
 			
 		}
 	}
-	
 
 }	
-
 
 @import 'photoswipe';
