@@ -152,9 +152,10 @@
 				<div id="headerLogin">
 					<strong>Welcome: </strong>
 					<?php if ( ! is_user_logged_in() ) { ?>
-						<a href="/wp-login.php">Login</a>
+						<a href="/wp-login.php">Log in</a>
 					<?php } else { ?>
-						Logged in as <span class="username"><?php echo esc_html( wp_get_current_user()->user_login ); ?></span>
+						Logged in as <span class="username"><?php echo esc_html( wp_get_current_user()->user_login ); ?></span> &nbsp;
+						<a href="/wp-login.php?action=logout">Log out</a>
 					<?php } ?>	
 				</div>
 			</div>

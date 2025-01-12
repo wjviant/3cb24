@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.25
+Version: 1.26
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -1142,7 +1142,7 @@ body.mobilenavopen {
 @media only screen and (min-width: 1200px) {
   #headerLogin {
     font-size: 16px;
-    top: 10px;
+    top: 15px;
     right: 1%;
     width: auto;
   }
@@ -2249,6 +2249,9 @@ html .single-tribe_events .event-banner .tribe-events-event-image {
   position: relative;
   z-index: 100;
 }
+html .single-tribe_events .event-banner .tribe-events-event-image img {
+  width: 100%;
+}
 html .single-tribe_events .event-banner .inner {
   position: absolute;
   top: 60%;
@@ -2512,6 +2515,9 @@ input[type=submit].slotIcon.disabled {
 }
 #slotToolButtons a {
   margin: 0 10px;
+}
+#slotToolButtons br {
+  display: none;
 }
 
 .tribe-events-sub-nav {
