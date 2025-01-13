@@ -110,6 +110,11 @@ define( 'DISALLOW_FILE_EDIT', true );
 show_admin_bar( false );
 
 
+
+
+
+
+
 /**
  * Remove link from author name in comments section.
  */
