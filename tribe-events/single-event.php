@@ -84,8 +84,7 @@ $title = apply_filters( 'tribe_events_single_event_title_html', the_title( $befo
 		<div class="inner">
 			<div class="event-container">
 				
-				<!-- Notices -->
-				<?php tribe_the_notices() ?>
+				
 				
 				<?php echo $title; ?>
 				
@@ -97,6 +96,9 @@ $title = apply_filters( 'tribe_events_single_event_title_html', the_title( $befo
 	</div>
 	
 	<div class="event-container">
+		
+		<!-- Notices -->
+		<?php tribe_the_notices() ?>
 	
 		<p class="tribe-events-back">
 			<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
