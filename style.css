@@ -2308,6 +2308,12 @@ html .single-tribe_events .tcb_briefing .missionRow {
 html .single-tribe_events .tcb_briefing h3 {
   margin-bottom: 10px;
 }
+html .single-tribe_events .tribe-events-sub-nav {
+  list-style: none;
+}
+html .single-tribe_events .tribe-events-sub-nav a span {
+  display: inline-block;
+}
 html .tribe-events-view--list {
   background: #eee;
   padding-top: 0;
@@ -2503,7 +2509,7 @@ html .tribe-common-g-row.tribe-events-calendar-latest-past__event-row .tribe-eve
 input[type=submit].slotIcon {
   background: #fff;
   background-size: cover;
-  border: 1px solid #000;
+  border: 2px solid #000;
   border-radius: 100%;
   cursor: pointer;
   display: inline-block;
@@ -2529,16 +2535,40 @@ input[type=submit].slotIcon.disabled {
   display: none;
 }
 
-.tribe-events-sub-nav {
-  list-style: none;
-}
-
-.tribe-events-single .tribe-events-sub-nav a span {
-  display: inline-block;
-}
-
 .unit {
   margin-bottom: 30px;
+}
+
+/* 
+	ACF Extended 
+*/
+.acf-field input[type=text],
+.acf-field input[type=password],
+.acf-field input[type=date],
+.acf-field input[type=datetime],
+.acf-field input[type=datetime-local],
+.acf-field input[type=email],
+.acf-field input[type=month],
+.acf-field input[type=number],
+.acf-field input[type=search],
+.acf-field input[type=tel],
+.acf-field input[type=time],
+.acf-field input[type=url],
+.acf-field input[type=week],
+.acf-field textarea,
+.acf-field select {
+  font-size: inherit;
+  padding: 15px;
+}
+
+.acf-fields > .acf-field {
+  padding: 20px 0;
+}
+
+ul.acf-radio-list li,
+ul.acf-checkbox-list li {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 /* 
