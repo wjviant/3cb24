@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php acf_form_head(); ?>
-	<div class="wrap">	
+	<div id="wrap" class="wrap">	
 		<header id="header">
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span>Menu</span></button></div>

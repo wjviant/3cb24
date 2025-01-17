@@ -19,15 +19,7 @@
 	
 	});
 	
-	// BTT
-  var timeOut;
-	function scrollToTop() {
-		if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0){
-			window.scrollBy(0,-50);
-			timeOut=setTimeout('scrollToTop()',10);
-		}
-		else clearTimeout(timeOut);
-	}
+	
 	 
 	
 // jQuery stuff	
@@ -87,10 +79,6 @@
 		$("#sidebar select").wrap("<div class=\"select-input\"></div>");
 		
 	});
-	
-	// Add div for dropdown arrow to modified select boxes
-	//$(window).on('load', function(){
-	//	$("#sidebar select").after("<div class=\"select-input\"></div>");
-	//});
+
 	
 })(jQuery); // Fully reference $ after this point.
