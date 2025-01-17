@@ -21,13 +21,13 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-<div class="container">
-	<div id="content" class="eight columns">
+<div class="container searchPage">
+	<div id="content" class="twelve columns">
 		<p>Sorry, that page doesn't exist. Please try searching:</p>
 		<div id="searchwrapper">
 			<?php get_search_form(); ?>
 		</div>
 	</div>
-	<?php get_sidebar(); ?>
+	
 </div>
 <?php get_footer(); ?>
