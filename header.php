@@ -150,11 +150,9 @@
 					</div>
 				</nav>
 				<div id="headerLogin">
-					<strong>Welcome: </strong>
-					<?php if ( ! is_user_logged_in() ) { ?>
-						<a href="/wp-login.php">Log in</a>
+					<?php if ( ! is_user_logged_in() ) { ?>	
 					<?php } else { ?>
-						Logged in as <span class="username"><?php echo esc_html( wp_get_current_user()->user_login ); ?></span> &nbsp;
+						<strong>Welcome: </strong>Logged in as <span class="username"><?php echo esc_html( wp_get_current_user()->user_login ); ?></span> &nbsp;
 						<a href="/wp-login.php?action=logout">Log out</a>
 					<?php } ?>	
 				</div>

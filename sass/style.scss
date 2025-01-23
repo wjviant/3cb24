@@ -64,6 +64,10 @@ q:before, q:after {
 
 /* #Basic Styles */
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: #fff; 
 	font-size: 16px;
