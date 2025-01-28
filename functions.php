@@ -53,6 +53,13 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_page_template( 'page-template-template-wiki.php' ) ) {
 		$classes[] = 'darkHeader';
 	}
+	if ( is_page_template( 'archive-epkb_post_type_1.php' ) ) {
+		$classes[] = 'darkHeader';
+	}
+	if ( get_post_type() === 'epkb_post_type_1' && !is_single() ) {
+		$classes[] = 'darkHeader';
+	}
+	
 	// If we're in a single wiki post.
 	if ( is_singular( 'epkb_post_type_1' ) ) {
 		$classes[] = 'darkHeader';
@@ -70,7 +77,7 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_404() ) {
 		$classes[] = 'darkHeader';
 	}
-	if ( get_post_type() == 'post' && !is_single() ) {
+	if ( get_post_type() === 'post' && !is_single() ) {
 		$classes[] = 'darkHeader';
 	}
 	if ( is_category() ) {
@@ -109,6 +116,44 @@ define( 'DISALLOW_FILE_EDIT', true );
  */
 show_admin_bar( false );
 
+
+
+/**
+ * AJAX search.
+ */
+ 
+/*
+  ==================
+  Ajax Search
+======================	 
+*/
+
+
+// the ajax function
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+
+function data_fetch(){
+	$the_query = new WP_Query(
+		array (
+			'posts_per_page' => -1,
+			's' => esc_attr( $_POST['keyword'] ),
+			'post_type' => array('epkb_post_type_1')
+		)
+	);
+	if( $the_query->have_posts() ) {
+		echo '<ul>';
+		while( $the_query->have_posts() ) {
+			$the_query->the_post(); ?>
+			<li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+			<?php }
+		echo '</ul>';
+		wp_reset_postdata();  
+	} else {
+		echo '<ul><li>Sorry, nothing found!</li></ul>';
+	}
+	die();
+}
 
 
 

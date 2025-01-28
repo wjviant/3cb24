@@ -23,6 +23,38 @@
 	
 	<?php wp_footer(); ?>
 	
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			
+			jQuery(document).mouseup(function(e){
+				var container = jQuery("#datafetch.show");
+				// If the target of the click isn't the container
+				if(!container.is(e.target) && container.has(e.target).length === 0){
+					jQuery("#datafetch").removeClass( 'show' );
+				}
+			});
+			
+			jQuery('#searchsubmit').click(function() {
+				event.preventDefault();
+				jQuery("#datafetch").addClass( 'show' );
+				jQuery('#datafetch').html( '<ul><li>Please wait..</li></ul>' );
+				if ( jQuery('#s').val().length >= 3) {
+					jQuery.ajax({
+						url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
+						type: 'post',
+						data: { action: 'data_fetch', keyword: jQuery('#s').val() },
+						success: function(data) {
+							jQuery('#datafetch').html( data );	
+						}
+					});
+				} else {
+					jQuery('#datafetch').html( '<ul><li>Please enter 3 or more letters</li></ul>' );
+				}
+			});
+			
+		});
+	</script>
+	
 	<script type="module">
 		import PhotoSwipeLightbox from '/wp-content/themes/3cb24/js/photoswipe-lightbox.esm.min.js';
 		const lightbox = new PhotoSwipeLightbox({
@@ -31,24 +63,6 @@
 			  pswpModule: () => import('/wp-content/themes/3cb24/js/photoswipe.esm.min.js')
 		});
 		lightbox.init();
-	</script>
-	
-	<script>
-		jQuery(document).ready(function() {
-		//jQuery(window).on('load', function() {
-			jQuery('.epkb-doc-search-container__title').removeAttr('style');
-			jQuery('.epkb-doc-search-container').removeAttr('style');
-			jQuery('.eckb-kb-template').removeAttr('style');
-			jQuery('.eckb-kb-template').removeAttr('style');
-			jQuery('#epkb_search_terms').removeAttr('style');
-			jQuery('#epkb-search-kb').removeAttr('style');
-			jQuery('.epkb-category-level-1').removeAttr('style');
-			jQuery('.epkb-cat-name-count-container').removeAttr('style');
-			jQuery('.epkb-top-category-box').removeAttr('style');
-			jQuery('.epkb-category-level-2-3__cat-name_text a').removeAttr('style');
-			jQuery('.epkb-sub-category li').removeAttr('style');
-			jQuery('.epkb-section-body').removeAttr('style');
-		});
 	</script>
 	
 </body>

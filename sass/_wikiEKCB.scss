@@ -1,0 +1,194 @@
+@use 'vars' as *;
+
+/*
+	Knowledge base/wiki pages
+*/
+
+html {
+
+	.eckb-kb-template {
+
+		#epkb-main-page-container.epkb-css-full-reset,
+		#eckb-article-page-container-v2 {
+
+			#eckb-article-body {
+				h1 {
+					font-family: "D-din";
+					font-size: 50px;
+					font-weight: $bold;
+					margin-bottom: 16px !important;
+					padding: 40px;
+					text-transform: none;
+				}
+			}
+
+			.epkb-doc-search-container {
+				background: #222;
+				margin-bottom: 30px !important;
+				padding: 145px 0 70px 0;
+
+				div.epkb-doc-search-container__title,
+				h1.epkb-doc-search-container__title {
+					color: #fff;
+					font-weight: bold !important;
+				}
+
+				#epkb_search_form {
+					#epkb_search_terms {
+						border: 2px solid #fff;
+						border-right: 0;
+						border-radius: 0 !important;
+						font-family: $base-font-family;
+						padding-left: 20px !important;
+					}
+
+					#epkb-search-kb {
+						background: $colour-link;
+						border: $colour-link;
+						border-radius: 0 !important;
+						font-family: $base-font-family;
+						text-shadow: none;
+						transition: all 0.2s linear;
+
+						&:hover {
+							background: $colour-link-hover;
+							border: $colour-link-hover;
+							transition: all 0.2s linear;
+						}
+					}
+				}
+
+				.epkb-doc-search-container__title {
+					color: #222;
+					font-weight: $bold;
+				}
+			}
+
+			.epkb-full {
+				background: $pageBg;
+
+				#epkb-content-container {
+					background: transparent;
+					margin-bottom: 0 !important;
+
+					a {
+						color: $colour-link;
+						text-decoration: none;
+
+						&:hover {
+							color: #222;
+							text-decoration: underline;
+						}
+					}
+
+					.epkb-section-container {
+
+						.eckb-categories-list {
+							background: $pageBg;
+							display: flex !important;
+							flex-wrap: wrap;
+							justify-content: center;
+							padding-bottom: 50px !important;
+
+							section {
+								background: #fff;
+								;
+								box-sizing: border-box;
+								flex: 0 0 31.333% !important;
+								font-size: 16px !important;
+								margin: 0 1% 2% 1% !important;
+								padding: 30px;
+
+								h2.epkb-cat-name {
+									color: #222 !important;
+									font-weight: bold !important;
+								}
+
+								.eckb-article-title__text {
+									color: $colour-link;
+									font-size: 16px;
+
+									&:hover {
+										color: #222;
+									}
+								}
+
+								.epkb-category-level-2-3__cat-name_text {
+									color: $colour-link;
+									font-size: 16px;
+									font-weight: bold;
+									margin-right: 5px;
+									margin-left: 5px;
+
+									a {
+										color: $colour-link;
+
+										&:hover {
+											color: #222;
+										}
+									}
+								}
+
+								.epkb-sub-category li {
+									padding: 5px 0;
+								}
+
+								.epkb-cat-count {
+									font-size: 10px;
+									padding: 3px 6px;
+								}
+
+								.epkb-section-body {
+									padding: 0 0 20px 10px;
+								}
+
+								.epkb-main-category {}
+
+								li .epkb-category-level-2-3__cat-icon:before {
+									content: "\f115";
+									font-family: "fontawesome";
+									position: relative;
+									top: 2px;
+									vertical-align: middle;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.tax-epkb_post_type_1_category {
+			padding-top: 95px;
+		}
+
+	}
+
+	#eckb-categories-archive-container-v2 {
+		padding-top: 95px;
+		width: 1176px;
+
+		#eckb-categories-archive__body__content #eckb-categories-archive__body__content__body .eckb-article-read-more {
+			color: $colour-link;
+			font-style: normal !important;
+
+			.eckb-article-read-more-text {
+				font-style: normal;
+			}
+		}
+	}
+
+	#eckb-article-page-container-v2 {
+		#eckb-article-body {
+			padding-bottom: 50px;
+
+			#eckb-article-content-body {
+				h2 {
+					font-size: 45px;
+					padding-top: 20px;
+				}
+			}
+
+		}
+	}
+}
