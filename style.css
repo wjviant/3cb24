@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.38
+Version: 1.39
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -178,7 +178,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.38
+Version: 1.39
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2762,7 +2762,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.38
+Version: 1.39
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2850,29 +2850,39 @@ Primary Branch: main
   margin: 0 0 15px 0;
 }
 #tcbWiki .wikiCategory a {
-  font-weight: normal;
   text-decoration: none;
 }
-#tcbWiki .wikiDocs li,
-#tcbWiki .wikiDocs li:active {
+#tcbWiki .wikiCategory .wikiDocs a {
+  font-weight: normal;
+}
+
+.wikiDocs {
+  list-style: none;
+}
+.wikiDocs li,
+.wikiDocs li:active {
   background-image: url(images/wiki-doc.svg);
   background-position: left 5px;
   background-repeat: no-repeat;
   background-size: 14px;
   padding-left: 25px;
 }
-#tcbWiki .wikiDocs li a,
-#tcbWiki .wikiDocs li:active a {
+.wikiDocs li a,
+.wikiDocs li:active a {
   background: none;
 }
-#tcbWiki .wikiSubcats li {
+
+.wikiSubcats {
+  list-style: none;
+}
+.wikiSubcats li {
   background-image: url(images/wiki-folder.svg);
   background-position: left 5px;
   background-repeat: no-repeat;
   background-size: 14px;
   padding-left: 25px;
 }
-#tcbWiki .wikiSubcats li a {
+.wikiSubcats li a {
   background: none;
   font-weight: bold;
 }

@@ -84,12 +84,19 @@
 			margin: 0 0 15px 0;
 		}
 		a {
-			font-weight: normal;
 			text-decoration: none;
 		}
+		.wikiDocs a {
+			font-weight:normal;
+		}
 	}
-	.wikiDocs li,
-	.wikiDocs li:active {
+		
+}
+
+.wikiDocs {
+	list-style: none;
+	li,
+	li:active {
 		background-image: url(images/wiki-doc.svg);
 		background-position: left 5px;
 		background-repeat: no-repeat;
@@ -99,7 +106,11 @@
 			background: none;
 		}
 	}
-	.wikiSubcats li {
+}
+
+.wikiSubcats {
+	list-style: none;
+	li {
 		background-image: url(images/wiki-folder.svg);
 		background-position: left 5px;
 		background-repeat: no-repeat;
@@ -109,7 +120,7 @@
 			background: none;
 			font-weight: bold;
 		}
-	}	
+	}
 }
 
 #tcbWikiSingle {

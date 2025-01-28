@@ -30,20 +30,16 @@ get_header(); ?>
 			</div>
 			<h2><?php single_cat_title(); ?></h2>
 		<?php
-		if ( have_posts() ) {
-			while ( have_posts() ) {
+		if ( have_posts() ) { ?>
+			<ul class="wikiDocs">
+			<?php while ( have_posts() ) {
 				the_post();
 				?>
-			<div class="post" id="post-<?php the_ID(); ?>" >
-				<h3 class="blog-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>  
-				<p class="postmetadata clear has-small-font-size">
-					<span class="blogcat">Posted by <strong><?php the_author(); ?></strong></span> on 
-					<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
-				</p>
-			</div>
+				<li><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></li>
 				<?php
 			}
-			?>
+			
+			?></ul>
 			<div class="navigation">
 				<div class="navlink"><?php next_posts_link(); ?></div>
 				<div class="navlink"><?php previous_posts_link(); ?></div>
