@@ -16,8 +16,7 @@
 		color: $colour-button;
 		max-height:0;
 		opacity: 0;
-		overflow: hidden;
-		overflow-y: auto;
+		
 		padding: 0;
 		position: absolute;
 		text-align: left;
@@ -27,11 +26,15 @@
 		&.show {
 			max-height: 250px;
 			opacity: 1;
+			overflow: hidden;
 			transition: all 0.1s linear;
 		}
 		ul {
 			list-style: none;
-			margin: 15px 0 15px 15px;
+			margin: 15px ;
+			max-height: 220px;
+			overflow: hidden;
+			overflow-y: auto;
 			li a {
 				color: $colour-button;
 			}	

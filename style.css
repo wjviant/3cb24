@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.40
+Version: 1.41
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -178,7 +178,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.40
+Version: 1.41
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2765,7 +2765,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.40
+Version: 1.41
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2792,8 +2792,6 @@ Primary Branch: main
   color: #2271b1;
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
-  overflow-y: auto;
   padding: 0;
   position: absolute;
   text-align: left;
@@ -2804,11 +2802,15 @@ Primary Branch: main
 #wikiSearch #datafetch.show {
   max-height: 250px;
   opacity: 1;
+  overflow: hidden;
   transition: all 0.1s linear;
 }
 #wikiSearch #datafetch ul {
   list-style: none;
-  margin: 15px 0 15px 15px;
+  margin: 15px;
+  max-height: 220px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 #wikiSearch #datafetch ul li a {
   color: #2271b1;
