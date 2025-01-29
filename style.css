@@ -5,7 +5,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.39
+Version: 1.40
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -178,7 +178,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.39
+Version: 1.40
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -1369,17 +1369,12 @@ body.mobilenavopen {
 }
 #headerMenuMobile button {
   background: transparent;
-  color: #fff;
-  font-size: 0;
-  padding: 0;
-}
-#headerMenuMobile button:active {
-  box-shadow: none;
-}
-#headerMenuMobile button {
   border-radius: 0;
+  color: #fff;
   display: block;
+  font-size: 0;
   height: 29px;
+  padding: 0;
   width: 29px;
 }
 #headerMenuMobile button span {
@@ -1411,6 +1406,9 @@ body.mobilenavopen {
   left: 0;
   transition: all 0.2s ease-in-out;
   width: 29px;
+}
+#headerMenuMobile button:active {
+  box-shadow: none;
 }
 #headerMenuMobile button.navOpen:before {
   background: #fff;
@@ -1454,7 +1452,6 @@ body.mobilenavopen {
     display: none;
   }
 }
-/* Homepage */
 /* Flexible content */
 .page-template-default #content {
   padding: 155px 0 100px 0;
@@ -2221,7 +2218,7 @@ body.mobilenavopen {
   transition: color 0.2s linear;
 }
 
-/* #Media Queries */
+/* Media Queries */
 @media only screen and (min-width: 600px) {
   .mobile {
     display: block;
@@ -2481,6 +2478,12 @@ html .single-tribe_events .tcb_briefing {
   background: #fff;
   margin-bottom: 30px;
   padding: 40px;
+}
+html .single-tribe_events .tcb_briefing .briefing-meta {
+  padding-bottom: 15px;
+}
+html .single-tribe_events .tcb_briefing .briefing-meta .column {
+  margin: 0;
 }
 html .single-tribe_events .tcb_briefing .missionRow {
   border-bottom: 1px solid #ccc;
@@ -2762,7 +2765,7 @@ Theme URI: https://byintention.co
 Description: Design by Arka, Wordpress theme by Nick at Intention, plugins by Lifetap
 Author: Nick "Badger" Hayward
 Author URI: https://byintention.co
-Version: 1.39
+Version: 1.40
 Tags: 
 License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -2839,52 +2842,54 @@ Primary Branch: main
   justify-content: center;
   padding-bottom: 50px;
 }
-#tcbWiki .wikiCategory {
+#tcbWiki .wiki-category {
   margin-bottom: 2%;
 }
-#tcbWiki .wikiCategory h3 {
+#tcbWiki .wiki-category h3 {
   margin-bottom: 20px;
 }
-#tcbWiki .wikiCategory ul {
+#tcbWiki .wiki-category ul {
   list-style: none;
   margin: 0 0 15px 0;
 }
-#tcbWiki .wikiCategory a {
+#tcbWiki .wiki-category a {
   text-decoration: none;
 }
-#tcbWiki .wikiCategory .wikiDocs a {
+#tcbWiki .wiki-category .wiki-docs a {
   font-weight: normal;
 }
 
-.wikiDocs {
+.wiki-docs {
   list-style: none;
 }
-.wikiDocs li,
-.wikiDocs li:active {
+.wiki-docs li,
+.wiki-docs li:active {
   background-image: url(images/wiki-doc.svg);
-  background-position: left 5px;
+  background-position: left 6px;
   background-repeat: no-repeat;
   background-size: 14px;
   padding-left: 25px;
 }
-.wikiDocs li a,
-.wikiDocs li:active a {
+.wiki-docs li a,
+.wiki-docs li:active a {
   background: none;
+  text-decoration: none;
 }
 
-.wikiSubcats {
+.wiki-subcats {
   list-style: none;
 }
-.wikiSubcats li {
+.wiki-subcats li {
   background-image: url(images/wiki-folder.svg);
   background-position: left 5px;
   background-repeat: no-repeat;
   background-size: 14px;
   padding-left: 25px;
 }
-.wikiSubcats li a {
+.wiki-subcats li a {
   background: none;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #tcbWikiSingle .postMetadata {

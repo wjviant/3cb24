@@ -1,8 +1,8 @@
 <?php
 /**
- * Custom functions for 3cb24 theme
- *
- * @package tcb24
+	Custom functions for 3cb24 theme
+
+	@package tcb24
  */
 
 /**
@@ -56,10 +56,9 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_page_template( 'archive-epkb_post_type_1.php' ) ) {
 		$classes[] = 'darkHeader';
 	}
-	if ( get_post_type() === 'epkb_post_type_1' && !is_single() ) {
+	if ( get_post_type() === 'epkb_post_type_1' && ! is_single() ) {
 		$classes[] = 'darkHeader';
 	}
-	
 	// If we're in a single wiki post.
 	if ( is_singular( 'epkb_post_type_1' ) ) {
 		$classes[] = 'darkHeader';
@@ -68,7 +67,6 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_singular( 'tribe_events' ) ) {
 		$classes[] = 'darkHeader';
 	}
-	
 	// If we're in search results page.
 	if ( is_search() ) {
 		$classes[] = 'darkHeader';
@@ -77,12 +75,10 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( is_404() ) {
 		$classes[] = 'darkHeader';
 	}
-	if ( get_post_type() === 'post' && !is_single() ) {
+	if ( get_post_type() === 'post' && ! is_single() ) {
 		$classes[] = 'darkHeader';
 	}
-	if ( is_category() ) {
-	//	$classes[] = 'darkHeader';
-	}
+	// if ( is_category() ) {}
 	return $classes;
 }
 
@@ -121,40 +117,31 @@ show_admin_bar( false );
 /**
  * AJAX search.
  */
- 
-/*
-  ==================
-  Ajax Search
-======================	 
-*/
-
-
-// the ajax function
-add_action('wp_ajax_data_fetch' , 'data_fetch');
-add_action('wp_ajax_nopriv_data_fetch','data_fetch');
-
-function data_fetch(){
+function data_fetch() {
 	$the_query = new WP_Query(
-		array (
+		array(
 			'posts_per_page' => -1,
-			's' => esc_attr( $_POST['keyword'] ),
-			'post_type' => array('epkb_post_type_1')
+			// 's'              => esc_attr( $_POST['keyword'] ),
+			'post_type'      => array( 'epkb_post_type_1' ),
 		)
 	);
-	if( $the_query->have_posts() ) {
+	if ( $the_query->have_posts() ) {
 		echo '<ul>';
-		while( $the_query->have_posts() ) {
+		while ( $the_query->have_posts() ) {
 			$the_query->the_post(); ?>
-			<li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-			<?php }
+			<li><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></li>
+			<?php
+		}
 		echo '</ul>';
-		wp_reset_postdata();  
+		wp_reset_postdata();
 	} else {
 		echo '<ul><li>Sorry, nothing found!</li></ul>';
 	}
 	die();
 }
 
+add_action( 'wp_ajax_data_fetch', 'data_fetch' );
+add_action( 'wp_ajax_nopriv_data_fetch', 'data_fetch' );
 
 
 
@@ -168,7 +155,14 @@ function tcb24_remove_author_url() {
 }
 add_filter( 'get_comment_author_url', 'tcb24_remove_author_url', 10, 3 );
 
-
+/**
+ * Nicer comments section code.
+ *
+ * @param string $comment - comment content.
+ * @param array  $args    - options.
+ * @param var    $depth   - depth of comment tree.
+ *
+ */
 function tcb24_comment( $comment, $args, $depth ) {
 	if ( 'div' === $args['style'] ) {
 		$tag       = 'div';
@@ -176,7 +170,8 @@ function tcb24_comment( $comment, $args, $depth ) {
 	} else {
 		$tag       = 'li';
 		$add_below = 'div-comment';
-	}?>
+	}
+	?>
 	<<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
 	<?php
 	if ( 'div' !== $args['style'] ) {
@@ -194,11 +189,11 @@ function tcb24_comment( $comment, $args, $depth ) {
 			</div>
 			<div class="comment-content">
 				<?php
-				printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ),get_comment_author_link() );
+				printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() );
 				if ( '0' === $comment->comment_approved ) {
 					?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/>
-				<?php
+						<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em><br/>
+					<?php
 				}
 				?>
 				<div class="comment-meta commentmetadata">
@@ -324,10 +319,6 @@ add_action( 'widgets_init', 'tcb24_sidebar_widgets_init' );
  * Load Scripts Properly.
  */
 function tcb24_scripts_method() {
-	// Add toast.
-	// wp_register_script( 'toast-script', get_template_directory_uri() . '/js/toaster.js', array( 'jquery' ) );.
-	// wp_enqueue_script( 'toast-script' );.
-
 	// Add FCS javascript.
 	wp_register_script( 'fcs-script', get_template_directory_uri() . '/js/fcs-min.js', array( 'jquery' ), 1.0, true );
 	wp_enqueue_script( 'fcs-script' );
@@ -339,7 +330,7 @@ add_action( 'wp_enqueue_scripts', 'tcb24_scripts_method' );
 // Events stuff.
 add_action(
 	'tribe_template_before_include:events/v2/components/events-bar',
-	function ( $file, $name, $template ) {
+	function() {
 		echo '<h1 id="eventListingTitle">Events</h1>';
 	},
 	10,

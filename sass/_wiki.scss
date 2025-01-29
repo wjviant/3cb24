@@ -74,7 +74,7 @@
 		justify-content: center;
 		padding-bottom: 50px;
 	}
-	.wikiCategory {
+	.wiki-category {
 		margin-bottom: 2%;
 		h3 {
 			margin-bottom: 20px;
@@ -86,29 +86,30 @@
 		a {
 			text-decoration: none;
 		}
-		.wikiDocs a {
+		.wiki-docs a {
 			font-weight:normal;
 		}
 	}
 		
 }
 
-.wikiDocs {
+.wiki-docs {
 	list-style: none;
 	li,
 	li:active {
 		background-image: url(images/wiki-doc.svg);
-		background-position: left 5px;
+		background-position: left 6px;
 		background-repeat: no-repeat;
 		background-size: 14px; 
 		padding-left: 25px;
 		a {
 			background: none;
+			text-decoration: none;
 		}
 	}
 }
 
-.wikiSubcats {
+.wiki-subcats {
 	list-style: none;
 	li {
 		background-image: url(images/wiki-folder.svg);
@@ -119,6 +120,7 @@
 		a {
 			background: none;
 			font-weight: bold;
+			text-decoration: none;
 		}
 	}
 }

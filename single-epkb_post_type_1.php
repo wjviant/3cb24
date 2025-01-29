@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Wiki single article template for 3cb24 theme
+ *
+ * @package tcb24
+ */
+
+get_header(); ?>
 <div id="tcbWikiSingle">
 	<div class="blogBanner banners">
 	<?php
@@ -16,25 +23,32 @@
 	</div>
 	<div id="tcbWikiContent" class="container">
 		<div class="nine columns">
-		<?php if ( have_posts() ) : ?>
-			<?php while (have_posts()) : the_post(); ?>
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				?>
 			<div class="post white padded" id="post-<?php the_ID(); ?>">
 				<div class="bread has-small-font-size">
-					<?php if( function_exists( "seopress_display_breadcrumbs" ) ) {
-						seopress_display_breadcrumbs();
-					} ?>
+				<?php
+				if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+					seopress_display_breadcrumbs();
+				}
+				?>
 				</div>
 				<div class="entry">
 					<h1 id="h1"><?php the_title(); ?></h1>
 					<p class="postMetadata clear has-small-font-size">
 						<span class="blogAuthor">Posted by <strong><?php the_author(); ?></strong></span>
-						<span class="blogDate"> on <?php the_time('F jS, Y') ?> </span>
+						<span class="blogDate"> on <?php the_time( 'F jS, Y' ); ?> </span>
 					</p>
 					<?php the_content(); ?>
 				</div>
 			</div>
-			<?php endwhile; ?>
-		<?php endif; ?>
+				<?php
+			}
+		}
+		?>
 		</div>
 		<div class="three columns">
 			<div id="toc" class="padded white">
@@ -84,4 +98,4 @@
 		</div>
 	</div>
 </div>
-<?php get_footer(); ?> 
+<?php get_footer(); ?>

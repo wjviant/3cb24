@@ -1,6 +1,6 @@
 <?php
 /**
- * Wiki archive for 3cb24 theme
+ * Wiki homepage for 3cb24 theme
  *
  * @package tcb24
  */
@@ -29,70 +29,75 @@ get_header(); ?>
 				'orderby'  => 'name',
 				'parent'   => 0,
 			]);
-			if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
-				foreach ( $terms as $term ) { ?>
-					<div class="wikiCategory four columns padded white">
-						<h3><?php echo esc_html( $term->name ); //echo ' - ID:'; echo $term->term_id; ?> </h3>
-						<p><?php //echo esc_html( $term->description );?> </p>
+			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+				foreach ( $terms as $term ) {
+					?>
+					<div class="wiki-category four columns padded white">
+						<h3><?php echo esc_html( $term->name ); ?> </h3>
 						<?php
-						// Get subcategories in this category
-						$subCats = get_terms([
-							'taxonomy' => 'epkb_post_type_1_category',
-							'order'    => 'asc',
-							'orderby'  => 'name',
-							'parent'   => $term->term_id,
-						]);
-						
-						// Build array of cats to exclude from top level list
-						$categoriesToExclude = array();
-						foreach ($subCats as $subCat) {
-							$categoriesToExclude[] = $subCat->term_id;
+						// Get subcategories in this category.
+						$sub_cats = get_terms(
+							[
+								'taxonomy' => 'epkb_post_type_1_category',
+								'order'    => 'asc',
+								'orderby'  => 'name',
+								'parent'   => $term->term_id,
+							]
+						);
+
+						// Build array of cats to exclude from top level list.
+						$categories_to_exclude = array();
+						foreach ( $sub_cats as $sub_cat ) {
+							$categories_to_exclude[] = $sub_cat->term_id;
 						}
-						
-						$excludes = implode(', ', $categoriesToExclude);
-						
-						// Get posts in this category
-						$args = [
-							'post_type' => 'epkb_post_type_1',
-							'tax_query' => array(
+						$excludes = implode( ', ', $categories_to_exclude );
+
+						// Get posts in this category.
+						$args  = [
+							'post_type'      => 'epkb_post_type_1',
+							'tax_query'      => array(
 								array(
-									'taxonomy' => 'epkb_post_type_1_category',
-									'field'    => 'id',
-									'terms'    => $term->term_id,
+									'taxonomy'         => 'epkb_post_type_1_category',
+									'field'            => 'id',
+									'terms'            => $term->term_id,
 									'category__not_in' => $excludes,
 									'include_children' => false,
 								),
 							),
-							'posts_per_page'   => -1,
-							
+							'posts_per_page' => -1,
 						];
-						// var_dump($args);
-						// var_dump($excludes);
-						$query = new WP_Query( $args ); ?>
-						<ul class="wikiDocs">
-						<?php while ( $query->have_posts() ) {
+						$query = new WP_Query( $args );
+						?>
+						<ul class="wiki-docs">
+						<?php
+						while ( $query->have_posts() ) {
 							$query->the_post();
 							?>
 							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 							<?php
 						}
-						wp_reset_query();
+						wp_reset_postdata();
 						?>
 						</ul>
-						<!-- Subcategories -->
-						<?php 
-						if ( !empty( $subCats ) && !is_wp_error( $subCats ) ) { ?>
-							<ul class="wikiSubcats">
-							<?php foreach ( $subCats as $subCat ) { ?>
-								<li class="largeText"><a href="<?php echo get_term_link( $subCat ); ?>"><?php echo esc_html( $subCat->name ); //echo ' - ID:'; echo esc_html( $subCat->term_id ); ?></a></li>
-							<?php } ?>
+						<!-- sub_categories -->
+						<?php
+						if ( ! empty( $sub_cats ) && ! is_wp_error( $sub_cats ) ) {
+							?>
+							<ul class="wiki-subcats">
+							<?php foreach ( $sub_cats as $sub_cat ) { ?>
+								<li class="largeText"><a href="<?php echo get_term_link( $sub_cat ); ?>"><?php echo esc_html( $sub_cat->name ); ?></a></li>
+							<?php
+							}
+							?>
 							</ul>
-						<?php } ?>
+							<?php
+						}
+						?>
 					</div>
 					<?php
 				}
 			}
-		?>
+			?>
 	</div>
 </div>
 <?php get_footer(); ?>
