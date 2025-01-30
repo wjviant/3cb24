@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Project Rules">
+	<!-- WPCS1621: These files are expected to use _ instead of -. -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>archive-epkb_post_type_1\.php</exclude-pattern>
+		<exclude-pattern>single-epkb_post_type_1\.php</exclude-pattern>
+		<exclude-pattern>taxonomy-epkb_post_type_1_category\.php</exclude-pattern>
+	</rule>
+</ruleset>

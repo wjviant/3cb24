@@ -78,7 +78,7 @@ function tcb24_custom_body_classes( $classes ) {
 	if ( get_post_type() === 'post' && ! is_single() ) {
 		$classes[] = 'darkHeader';
 	}
-	// if ( is_category() ) {}
+	// if ( is_category() ) {}.
 	return $classes;
 }
 
@@ -118,10 +118,18 @@ show_admin_bar( false );
  * AJAX search.
  */
 function data_fetch() {
+	
+	// if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+	//	 die ( 'Busted!');
+	// }
+	
+	if ( isset( $_POST['keyword'] ) ) {
+		$searchterm = sanitize_text_field( wp_unslash( $_POST['keyword'] ) );
+	}
 	$the_query = new WP_Query(
 		array(
 			'posts_per_page' => -1,
-			's'              => esc_attr( $_POST['keyword'] ),
+			's'              => $searchterm,
 			'post_type'      => array( 'epkb_post_type_1' ),
 		)
 	);
@@ -139,9 +147,9 @@ function data_fetch() {
 	}
 	die();
 }
-
 add_action( 'wp_ajax_data_fetch', 'data_fetch' );
 add_action( 'wp_ajax_nopriv_data_fetch', 'data_fetch' );
+
 
 
 
@@ -161,7 +169,6 @@ add_filter( 'get_comment_author_url', 'tcb24_remove_author_url', 10, 3 );
  * @param string $comment - comment content.
  * @param array  $args    - options.
  * @param var    $depth   - depth of comment tree.
- *
  */
 function tcb24_comment( $comment, $args, $depth ) {
 	if ( 'div' === $args['style'] ) {
@@ -330,7 +337,7 @@ add_action( 'wp_enqueue_scripts', 'tcb24_scripts_method' );
 // Events stuff.
 add_action(
 	'tribe_template_before_include:events/v2/components/events-bar',
-	function() {
+	function () {
 		echo '<h1 id="eventListingTitle">Events</h1>';
 	},
 	10,
