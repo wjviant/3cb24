@@ -23,12 +23,14 @@ get_header(); ?>
 	</div> 
 	<div id="tcbWikiContent" class="container">
 		<?php
-			$terms = get_terms([
-				'taxonomy' => 'epkb_post_type_1_category',
-				'order'    => 'asc',
-				'orderby'  => 'name',
-				'parent'   => 0,
-			]);
+			$terms = get_terms(
+				array(
+					'taxonomy' => 'epkb_post_type_1_category',
+					'order'    => 'asc',
+					'orderby'  => 'name',
+					'parent'   => 0,
+				)
+			);
 			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 				foreach ( $terms as $term ) {
 					?>
@@ -37,12 +39,12 @@ get_header(); ?>
 						<?php
 						// Get subcategories in this category.
 						$sub_cats = get_terms(
-							[
+							array(
 								'taxonomy' => 'epkb_post_type_1_category',
 								'order'    => 'asc',
 								'orderby'  => 'name',
 								'parent'   => $term->term_id,
-							]
+							),
 						);
 
 						// Build array of cats to exclude from top level list.
@@ -53,7 +55,7 @@ get_header(); ?>
 						$excludes = implode( ', ', $categories_to_exclude );
 
 						// Get posts in this category.
-						$args  = [
+						$args  = array(
 							'post_type'      => 'epkb_post_type_1',
 							'tax_query'      => array(
 								array(
@@ -65,7 +67,7 @@ get_header(); ?>
 								),
 							),
 							'posts_per_page' => -1,
-						];
+						);
 						$query = new WP_Query( $args );
 						?>
 						<ul class="wiki-docs">
@@ -85,8 +87,8 @@ get_header(); ?>
 							?>
 							<ul class="wiki-subcats">
 							<?php foreach ( $sub_cats as $sub_cat ) { ?>
-								<li class="largeText"><a href="<?php echo get_term_link( $sub_cat ); ?>"><?php echo esc_html( $sub_cat->name ); ?></a></li>
-							<?php
+								<li class="largeText"><a href="<?php echo esc_html( get_term_link( $sub_cat ) ) ; ?>"><?php echo esc_html( $sub_cat->name ); ?></a></li>
+								<?php
 							}
 							?>
 							</ul>
