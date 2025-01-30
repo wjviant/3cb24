@@ -39,8 +39,8 @@ get_header(); ?>
 				<div class="entry">
 					<h1 id="h1"><?php the_title(); ?></h1>
 					<p class="postMetadata clear has-small-font-size">
-						<span class="blogAuthor">Posted by <strong><?php the_author(); ?></strong></span>
-						<span class="blogDate"> on <?php the_time( 'F jS, Y' ); ?> </span>
+						<span class="blogAuthor">Posted by <strong><?php the_author(); ?></strong></span> &nbsp; 
+						<span class="blogDate">Last updated <?php the_modified_time('F jS, Y'); ?> </span>
 					</p>
 					<?php the_content(); ?>
 				</div>
