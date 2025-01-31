@@ -36,7 +36,7 @@ get_header(); ?>
 					?>
 					<div class="wiki-category four columns padded white">
 						
-						<h3><?php echo esc_html( $wikiterm->name ); ?> - <?php echo esc_html( $wikiterm->term_id ); ?></h3>
+						<h3><?php echo esc_html( $wikiterm->name ); ?></h3>
 						<?php
 						// var_dump($wikiterm);
 						// Get subcategories in this category.
@@ -58,7 +58,8 @@ get_header(); ?>
 
 						// Show only posts in this category - not sub categories.
 						$args = array(
-							'post_type' => 'epkb_post_type_1',
+							'post_type'      => 'epkb_post_type_1',
+							'posts_per_page' => 120,
 						);
 
 						$query = new WP_Query( $args );

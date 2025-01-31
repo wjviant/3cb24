@@ -114,14 +114,6 @@ show_admin_bar( false );
 
 
 
-function target_main_category_query_with_conditional_tags( $query ) {
-	if ( ! is_admin() && is_post_type_archive( 'epkb_post_type_1' ) ) {
-		// Let's change the query for this archive.
-		$query->set( 'posts_per_page', 120 );
-	}
-}
-add_action( 'pre_get_posts', 'target_main_category_query_with_conditional_tags' );
-
 
 /**
  * AJAX search.

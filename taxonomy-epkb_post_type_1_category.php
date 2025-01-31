@@ -20,44 +20,78 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-	</div> 
+	</div>
 	<div id="tcbWikiContent" class="container">
 		<div class="tcbWikiArticles padded white">
 			<div class="bread has-small-font-size">
-				<?php
-				if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
-					seopress_display_breadcrumbs();
-				}
-				?>
+			<?php
+			if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+				seopress_display_breadcrumbs();
+			}
+			?>
 			</div>
 			<h2><?php single_cat_title(); ?></h2>
-		<?php
-		if ( have_posts() ) {
+			<?php
+			// Get current category.
+			$current_cat = get_the_terms( get_the_ID(), 'epkb_post_type_1_category' );
+			// echo '<p>current category id: '. $current_cat[0]->term_id . '</p>';
+			// echo '<hr>';
 			?>
 			<ul class="wiki-docs">
 			<?php
-			while ( have_posts() ) {
-				the_post();
+			// Show only posts in this category - not posts from sub categories.
+			$args  = array(
+				'post_type'      => 'epkb_post_type_1',
+				'posts_per_page' => 120,
+			);
+			$query = new WP_Query( $args );
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$catterms = wp_get_post_terms( $query->post->ID, 'epkb_post_type_1_category' );
+				if ( ! empty( $catterms ) ) {
+					foreach ( $catterms as $catterm ) {
+						// echo 'category: ' . $term->term_id.'<br>';
+					}
+				}
+				if ( $current_cat[0]->term_id === $catterm->term_id ) {
+					?>
+					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<?php
+				}
+			}
+			wp_reset_postdata();
+			?>
+			</ul>
+			<?php
+			// Get subcategories in this category.
+			$sub_cats = get_terms(
+				array(
+					'taxonomy' => 'epkb_post_type_1_category',
+					'order'    => 'asc',
+					'orderby'  => 'name',
+					'parent'   => $current_cat[0]->term_id,
+				),
+			);
+			// Build array of cats to exclude from top level list.
+			$categories_to_exclude = array();
+			foreach ( $sub_cats as $sub_cat ) {
+				$categories_to_exclude[] = $sub_cat->term_id;
+			}
+			$excludes = implode( ', ', $categories_to_exclude );
+			if ( ! empty( $sub_cats ) && ! is_wp_error( $sub_cats ) ) {
 				?>
-				<li><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></li>
+				<ul class="wiki-subcats">
+				<?php
+				foreach ( $sub_cats as $sub_cat ) {
+					?>
+					<li><a href="<?php echo esc_html( get_term_link( $sub_cat ) ); ?>"><?php echo esc_html( $sub_cat->name ); ?></a></li>
+					<?php
+				}
+				?>
+				</ul>
 				<?php
 			}
 			?>
-			</ul>
-			<div class="navigation">
-				<div class="navlink"><?php next_posts_link(); ?></div>
-				<div class="navlink"><?php previous_posts_link(); ?></div>
-			</div>
-		</div>
-			<?php
-		} else {
-			?>
-			<h2 class="center">Not Found</h2>  
-			<p class="center">Sorry, but you are looking for something that isn't here.</p>
-			<?php
-			get_search_form();
-		}
-		?>
 	</div>
 </div>
 <?php get_footer(); ?>
