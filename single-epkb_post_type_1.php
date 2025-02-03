@@ -43,6 +43,9 @@ get_header(); ?>
 						<span class="blogDate">Last updated <?php the_modified_time('F jS, Y'); ?> </span>
 					</p>
 					<?php the_content(); ?>
+					
+					<!-- TO DO - prev/next or related articles -->
+					
 				</div>
 			</div>
 				<?php
@@ -64,10 +67,8 @@ get_header(); ?>
 					headings.forEach( (heading, index, array) => {
 						// Get current heading level
 						var headerlevel = heading.outerHTML.charAt(2);
-					
 						// Add the ID to the header tag
 						heading.id = "heading-" + index;
-						
 						// See if we've got a following header tag, get the level if so
 						if ( index < ( array.length -1 ) ) { 
 							var nextheadingtag = array[index+1];
