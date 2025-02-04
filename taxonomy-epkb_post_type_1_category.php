@@ -33,16 +33,15 @@ get_header(); ?>
 			<h2><?php single_cat_title(); ?></h2>
 			<?php
 			// Get current category.
-			$current_cat = get_the_terms( get_the_ID(), 'epkb_post_type_1_category' );
-			// echo '<p>current category id: '. $current_cat[0]->term_id . '</p>';
-			// echo '<hr>';
+			$current_cat = get_queried_object_id();		
+			echo '<p style="display:none;">Current category id: '. $current_cat . '</p>';
 			?>
 			<ul class="wiki-docs">
 			<?php
 			// Show only posts in this category - not posts from sub categories.
 			$args  = array(
 				'post_type'      => 'epkb_post_type_1',
-				'posts_per_page' => 120,
+				'posts_per_page' => 110,
 			);
 			$query = new WP_Query( $args );
 			while ( $query->have_posts() ) {
@@ -53,7 +52,7 @@ get_header(); ?>
 						// echo 'category: ' . $term->term_id.'<br>';
 					}
 				}
-				if ( $current_cat[0]->term_id === $catterm->term_id ) {
+				if ( $current_cat === $catterm->term_id ) {
 					?>
 					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 					<?php
@@ -69,16 +68,17 @@ get_header(); ?>
 					'taxonomy' => 'epkb_post_type_1_category',
 					'order'    => 'asc',
 					'orderby'  => 'name',
-					'parent'   => $current_cat[0]->term_id,
+					'parent'   => $current_cat,
 				),
 			);
-			// Build array of cats to exclude from top level list.
-			$categories_to_exclude = array();
-			foreach ( $sub_cats as $sub_cat ) {
-				$categories_to_exclude[] = $sub_cat->term_id;
-			}
-			$excludes = implode( ', ', $categories_to_exclude );
-			if ( ! empty( $sub_cats ) && ! is_wp_error( $sub_cats ) ) {
+			// Build array of cats to exclude from top level list, if we ever want
+			// $categories_to_exclude = array();
+			// foreach ( $sub_cats as $sub_cat ) {
+			//	$categories_to_exclude[] = $sub_cat->term_id;
+			// }
+			// $excludes = implode( ', ', $categories_to_exclude );
+			
+			if ( ! empty( $sub_cats ) ) {
 				?>
 				<ul class="wiki-subcats">
 				<?php
