@@ -50,16 +50,16 @@ get_header(); ?>
 				
 				// echo get_the_ID() . '<br>';
 				
-				$catterms = wp_get_post_terms( $query->post->ID, 'epkb_post_type_1_category' );
+				$catterms = wp_get_post_terms( $query->post->ID, 'epkb_post_type_1_category' , array( 'fields' => 'ids' ) );
 				if ( ! empty( $catterms ) ) {
 					foreach ( $catterms as $catterm ) {
-						if ( $current_cat === $catterm->term_id ) {
+						if ( $current_cat === $catterm ) {
 							?>
 							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 							<?php
+							break;
 						}
 					}
-					
 				}
 			}
 			wp_reset_postdata();
