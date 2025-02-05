@@ -33,8 +33,8 @@ get_header(); ?>
 			<h2><?php single_cat_title(); ?></h2>
 			<?php
 			// Get current category.
-			$current_cat = get_queried_object_id();		
-			echo '<p style="display:none;">Current category id: '. $current_cat . '</p>';
+			$current_cat = get_queried_object_id();
+			echo '<p style="display:none;">Current category id: ' . esc_attr( $current_cat ) . '</p>';
 			?>
 			<ul class="wiki-docs">
 			<?php
@@ -42,20 +42,24 @@ get_header(); ?>
 			$args  = array(
 				'post_type'      => 'epkb_post_type_1',
 				'posts_per_page' => 110,
+				'fields'         => 'ids, title, link',
 			);
 			$query = new WP_Query( $args );
 			while ( $query->have_posts() ) {
 				$query->the_post();
+				
+				// echo get_the_ID() . '<br>';
+				
 				$catterms = wp_get_post_terms( $query->post->ID, 'epkb_post_type_1_category' );
 				if ( ! empty( $catterms ) ) {
 					foreach ( $catterms as $catterm ) {
-						// echo 'category: ' . $term->term_id.'<br>';
+						if ( $current_cat === $catterm->term_id ) {
+							?>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+							<?php
+						}
 					}
-				}
-				if ( $current_cat === $catterm->term_id ) {
-					?>
-					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php
+					
 				}
 			}
 			wp_reset_postdata();
@@ -77,7 +81,6 @@ get_header(); ?>
 			//	$categories_to_exclude[] = $sub_cat->term_id;
 			// }
 			// $excludes = implode( ', ', $categories_to_exclude );
-			
 			if ( ! empty( $sub_cats ) ) {
 				?>
 				<ul class="wiki-subcats">
